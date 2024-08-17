@@ -1,0 +1,57 @@
+	<html>
+	<head>
+	<script language="javascript">
+	function f1()
+	{
+	if(document.f.t1.value=="")
+	{
+	alert("Plz enter your id")
+	}
+	else if(document.f.p1.value=="")
+	{
+	alert("plz enter your password");
+	}
+	else if(document.f.p2.value=="")
+	{
+	alert("Plz give your hint answer")
+	}
+	else
+	{
+	document.f.submit()
+	}
+	}
+	</script>
+	</head>
+	<body bgColor="black" topmargin=0 leftmargin=0>
+	<center>
+	<img src="banner.jpg">
+	<center><table width=75% cellspacing=5>
+	<form name="f" method="post" action="newuser.php">
+	<td><font face="comic sans ms" color="lime">Enter Your Id : </td>
+	<td><input type="text" name="t1"></td>
+	<tr>
+	<td><font face="comic sans ms" color="lime">Enter Your Password : </td>
+	<td><input type="password" name="p1"></td>
+	<tr>
+	<td><font face="comic sans ms" color="lime">Hint Question?</td>
+	<td>
+	<select name="s1">
+	<option value="Nick Name ?">Nick Name?</option>
+	<option value="First School Name ?">First School Name ?</option>
+	</select>
+	
+	</td>
+	<tr>	
+	<td><font face="comic sans ms" color="lime">Hint Answer</td>	
+	<td><input type="password" name="p2"></td>
+	<tr>
+	<td><input type="reset"></td>
+	<td><input type="button" value="Submit form" onClick="f1()"></td>
+	
+	<tr>
+	
+	</form>
+	</table></center>
+	</center>
+	</body>
+	</html>
