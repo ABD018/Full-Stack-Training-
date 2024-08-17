@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Message</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <button id="alertButton" class="btn btn-primary" onclick="showAlert()">Show Alert</button>
+    </div>
+
+    <div id="alertMessage" class="container mt-3 alert alert-info alert-dismissible" style="display: none;">
+        <strong>Alert!</strong> This is an alert message.
+        <button type="button" class="close" data-dismiss="alert" onclick="closeAlert()">
+            <span>&times;</span>
+        </button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showAlert() {
+            var alertMessage = document.getElementById('alertMessage');
+            var alertButton = document.getElementById('alertButton');
+            alertMessage.style.display = 'block';
+            alertButton.disabled = true;
+        }
+
+        function closeAlert() {
+            var alertMessage = document.getElementById('alertMessage');
+            var alertButton = document.getElementById('alertButton');
+            alertMessage.style.display = 'none';
+            alertButton.disabled = false;
+        }
+    </script>
+    
+    <!-- <script>
+        $(document).ready(function() {
+            $('#alertButton').on('click', function() {
+                var alertMessage = $('#alertMessage');
+                var alertButton = $('#alertButton');
+
+                // Show the alert message
+                alertMessage.fadeIn();
+
+                // Disable the button until alert is closed
+                alertButton.prop('disabled', true);
+            });
+
+            $('#alertMessage .close').on('click', function() {
+                var alertMessage = $('#alertMessage');
+                var alertButton = $('#alertButton');
+
+                // Hide the alert message
+                alertMessage.fadeOut();
+
+                // Enable the button after alert is closed
+                alertButton.prop('disabled', false);
+            });
+        });
+    </script> -->
+</body>
+</html>

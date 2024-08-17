@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juggling Words</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+       
+        #container {
+            position: relative;
+        }
+       
+        .word {
+            position: absolute;
+            font-size: 24px;
+            color: #333;
+            transition: transform 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <span class="word">A</span>
+        <span class="word">M</span>
+        <span class="word">A</span>
+        <span class="word">N</span>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const words = document.querySelectorAll('.word');
+            const container = document.getElementById('container');
+            const spacing = 30; // Space between words
+ 
+            document.addEventListener('mousemove', (event) => {
+                const mouseX = event.clientX;
+                const mouseY = event.clientY;
+               
+                let offsetX = 0;
+ 
+                words.forEach((word, index) => {
+                    setTimeout(() => {
+                        moveWord(word, mouseX, mouseY, offsetX, container);
+                        offsetX += spacing;
+                    }, 100 * index);
+                });
+            });
+        });
+ 
+        function moveWord(word, mouseX, mouseY, offsetX, container) {
+            const wordX = mouseX + offsetX - container.offsetLeft;
+            const wordY = mouseY - container.offsetTop;
+            word.style.transform = `translate(${wordX}px, ${wordY}px)`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body 
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container 
+        {
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: white;
+            text-align: center;
+        }
+        .content 
+        {
+            margin-bottom: 20px;
+        }
+        .outside 
+        {
+            position: absolute;
+            right: 200px;
+            top: 380px;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" name="f">
+    <div class="container">
+        <div class="content">
+            <h2>Inside the Box</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur necessitatibus, itaque aliquam accusantium vero magni commodi ipsum eum laboriosam expedita sint tenetur vitae distinctio aspernatur, maxime incidunt animi praesentium alias.</p>
+        </div>
+        <div class="outside">
+            <label for="colorSelect">Choose a background color:</label>
+            <select name="colorSelect" onchange="changeBackgroundColor()">
+                <option value="#f0f0f0">Gray</option>
+                <option value="#ffcccc">Light Red</option>
+                <option value="#ccffcc">Light Green</option>
+                <option value="#ccccff">Light Blue</option>
+                <option value="#ffffcc">Light Yellow</option>
+                <option value="#ffccff">Light Purple</option>
+                <option value="#ff9966">Light Orange</option>
+            </select>
+        </div>
+    </div>
+    </form>
+    <script>
+        function changeBackgroundColor() {
+            var selectedColor = document.f.colorSelect.value;
+            document.body.style.backgroundColor = selectedColor;
+        }
+    </script>
+</body>
+</html>

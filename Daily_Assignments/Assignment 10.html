@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <style>
+      form
+      {
+        font-family: gabriola;
+        font-size: 1.2rem;
+        color: rgb(12, 97, 196);
+
+      }
+      label
+      {
+          width:10%;
+          
+      }
+      .box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 2px solid #000;
+        width: 50%;
+        margin-left: 370px;
+      }
+  </style>
+
+    <!-- <div class="box">
+    <h1>REGISTRATION FORM</h1>
+    <form name="f1">
+        <label for="Name">Name:</label>
+        <input type="text" name="name"  autocomplete="off"><br>
+        <span class="error" name="nameError"></span>
+        <label for="Email">Email:</label>
+        <input type="text" name="email" onblur="emailInput()" autocomplete="off"><br>
+        <label for="Password">Password:</label>
+        <input type="text" name="password" onblur="passInput()" autocomplete="off"><br>
+        <label for="address">Address:</label>
+        <input type="text" name="address" onblur="addressInput()" autocomplete="off"><br>
+        <span class="error" name="addressError"></span>
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" onblur="contact()" autocomplete="off"><br>
+        <input type="button" value="Register">        
+    </form>
+</div> -->
+    <!-- <script>
+       
+        function NameInput(){
+            const num=document.f1.Name.value;
+            if(num==""){
+                document.f1.Name.select();
+                document.f1.Name.focus();
+                      }
+                    }
+ 
+        function emailInput(){
+          var spcl_chars = [ "!", "#" ,"$" ,"%", "&", "'" ,"*" ,"+","-" ,"/" ,"=", "?", "^" ,"_" ,"`" , "{" , "|" , "}" ,"~" ]
+          var refocus = false
+          var str = document.f1.email.value
+          for(var i=0;i<spcl_chars.length;i++){
+              if(str.includes(spcl_chars[i])){
+                  refocus = true
+              }
+          }
+          if(!(str.includes("@")) || !(str.includes(".com")) || (str.indexOf("@")== str.length-5 )|| str.indexOf(".com")!=str.length-4 || str.length<=0){
+              refocus = true
+          }    
+         
+          if(refocus){
+              document.f1.email.focus();
+              document.f1.email.select();
+          }
+        }
+
+        function passInput(){
+            if(password<=3 || password>=13)
+        {
+            document.f1.password.focus()
+            document.f1.password.select()
+        }
+          }
+    
+ 
+        function addressInput(){
+            const add=document.f1.address.value;
+            if(add==""){
+                document.f1.address.select();
+                document.f1.address.focus();
+            }
+        }
+ 
+        function contact(){
+            const val =/^[1-9]\d{2}-\d{3} \d{4}$/;
+            const number=document.f1.phone.value;
+            if(!val.test(number)){
+                document.f1.phone.select();
+                document.f1.phone.focus();
+            }
+        }
+    </script> -->
+    <form name="f">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required autocomplete="off">
+        <br><br>
+        <span id="name-error"></span>
+      
+        <label for="email">Email:</label>
+        <input type="text" name="email" required autocomplete="off">
+        <br><br>
+        <span id="email-error"></span>
+      
+        <label for="password">Password:</label>
+        <input type="text" name="password" required autocomplete="off">
+        <br><br>
+        <span id="password-error"></span>
+      
+        <label for="contact">Contact:</label>
+        <input type="text" name="contact" required autocomplete="off">
+        <br><br>
+        <span id="contact-error"></span>
+      
+        <label for="address">Address:</label>
+        <input type="text" name="address" required autocomplete="off">
+        <br><br>
+        <span id="address-error"></span>
+      
+        <button type="submit">Submit</button>
+    </form>
+      
+    <script>
+        document.f.name.onblur = function() {
+          if (document.f.name.value === '') {
+            document.getElementById('name-error').innerHTML = 'This field is required<br>';
+            document.f.name.focus();
+          } else {
+            document.getElementById('name-error').innerHTML = '';
+          }
+        };
+      
+        document.f.email.onblur = function() {
+          if (document.f.email.value === '') {
+            document.getElementById('email-error').innerHTML = 'This field is required<br>';
+            document.f.email.focus();
+          } else if (!validateEmail(document.f.email.value)) {
+            document.getElementById('email-error').innerHTML = 'Invalid email address<br>';
+            document.f.email.focus();
+          } else {
+            document.getElementById('email-error').innerHTML = '';
+          }
+        };
+      
+        document.f.password.onblur = function() {
+          if (document.f.password.value === '') {
+            document.getElementById('password-error').innerHTML = 'This field is required<br>';
+            document.f.password.focus();
+          } else {
+            document.getElementById('password-error').innerHTML = '';
+          }
+        };
+      
+        document.f.contact.onblur = function() {
+          if (document.f.contact.value === '') {
+            document.getElementById('contact-error').innerHTML = 'This field is required<br>';
+            document.f.contact.focus();
+          } else if (!validateContact(document.f.contact.value)) {
+            document.getElementById('contact-error').innerHTML = 'Invalid contact number<br>';
+            document.f.contact.focus();
+          } else {
+            document.getElementById('contact-error').innerHTML = '';
+          }
+        };
+      
+        document.f.address.onblur = function() {
+          if (document.f.address.value === '') {
+            document.getElementById('address-error').innerHTML = 'This field is required<br>';
+            document.f.address.focus();
+          } else {
+            document.getElementById('address-error').innerHTML = '';
+          }
+        };
+      
+        function validateEmail(email) {
+          const emailParts = email.split('@');
+          if (emailParts.length !== 2) return false;
+          const localPart = emailParts[0];
+          const domain = emailParts[1];
+          if (localPart.length < 1 || localPart.length > 64) return false;
+          if (domain.length < 3 || domain.length > 255) return false;
+          return true;
+        }
+      
+        function validateContact(contact) {
+          const contactParts = contact.split('-');
+          if (contactParts.length !== 3) return false;
+          if (contactParts[0].length !== 3 || contactParts[1].length !== 3 || contactParts[2].length !== 4) return false;
+          return true;
+        }
+    </script>
+
+</body>
+</html>

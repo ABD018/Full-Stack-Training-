@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>See More / See Less Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .container {
+      
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    #more {
+      display: none;
+    }
+
+    #toggleLink {
+      margin-top: 10px;
+      color: #007BFF;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    #toggleLink:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>See More Example</h1>
+    <p id="paragraph">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id quam nec lorem dictum faucibus. 
+      <span id="dots">...</span>
+      <span id="more">Vivamus luctus eros aliquet convallis ultricies. Maecenas vehicula, odio sit amet congue iaculis, 
+      dolor justo vehicula eros, a gravida eros velit ut turpis. Fusce condimentum non eros nec ultricies.</span>
+    </p>
+    <a href="#" id="toggleLink" onclick="toggleParagraph()">See more...</a>
+  </div>
+  <script>
+    function toggleParagraph() {
+      const dots = document.getElementById("dots");
+      const moreText = document.getElementById("more");
+      const toggleLink = document.getElementById("toggleLink");
+
+      if (dots.style.display == "none") {
+        dots.style.display = "inline";
+        moreText.style.display = "none";
+        toggleLink.innerHTML = "See more...";
+      } else {
+        dots.style.display = "none";
+        moreText.style.display = "inline";
+        toggleLink.innerHTML = "See less...";
+      }
+    }
+  </script>
+</body>
+</html>

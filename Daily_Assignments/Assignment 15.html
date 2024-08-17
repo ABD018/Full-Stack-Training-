@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter-blocks</title>
+</head>
+<style>
+body{
+    background-color: black;
+}
+input{
+    background-color: blanchedalmond;
+}
+.word{
+    position: fixed;
+    bottom: 0;
+    margin: 10px;
+}
+.name{
+    text-align: center;
+    margin: 70px;
+}
+input[type=button]{
+    padding: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+ 
+</style>
+<body>
+   
+<div class="word">
+<input type="button" value="A" onclick="letter('A')">
+<input type="button" value="m" onclick="letter('m')">
+<input type="button" value="a" onclick="letter('a')">
+<input type="button" value="n" onclick="letter('n')">
+ 
+</div>
+<div class="name">
+    <span id="A" style="font-size: 340px;color: red;"></span>
+    <span id="m" style="font-size: 300px;color: green;"></span>
+    <span id="a" style="font-size: 260px;color: blue;"></span>
+    <span id="n" style="font-size: 220px;color: violet;"></span>
+</div>
+ 
+<script>
+    function letter(n){
+        let span=document.getElementById(n)
+       span.innerHTML=n;
+    }
+</script>
+</body>
+</html>

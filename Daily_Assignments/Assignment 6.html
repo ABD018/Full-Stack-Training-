@@ -1,0 +1,78 @@
+<!-- check palindrome string -->
+<!-- check the string whether it is in upper case or lower case, if it is in upper case change to lower case and if it is in lower case change to upper case-->
+<!-- check the string whether each character is in upper case or lower case , if the character of the string is in upper case change it to lower case and if the character is in lower case change it to upper case-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = prompt("enter the string : ");
+         function checkCase(str)
+         {
+          let result = "";
+          for(let i = 0; i < str.length; i++)
+          {
+            if(str[i] === str[i].toUpperCase())
+            {
+              result += str[i].toLowerCase();
+            }
+            else
+            {
+              result += str[i].toUpperCase();
+            }
+            }
+            return result;
+            }
+            document.write(checkCase(str));
+            document.write("<br>");
+
+
+        function checkCase2(str) 
+        {
+            if (str == str.toUpperCase()) 
+            {
+                return str.toLowerCase();
+            } 
+            else if (str == str.toLowerCase()) 
+            {
+                return str.toUpperCase();
+            } 
+            else 
+            {
+                return str; 
+            }
+        }
+
+        document.write(checkCase2(str));
+        document.write("<br>");
+
+        function checkPalindrome(str) 
+        {
+            let reverse = str.split("").reverse().join("");
+            if (str === reverse) 
+            {
+                return `Yes, "${str}" is a palindrome`;
+            } 
+            else 
+            {
+                return `No, "${str}" is not a palindrome`;
+            }
+            }
+
+            document.write(checkPalindrome(str));
+            </script>
+
+        <form action="#">
+            <label for="id">Enter id : </label>
+            <input type="text" name="id">
+            <br><br>
+            <label for="password">Enter Password : </label>
+            <input type="text" name="password">
+        </form>
+
+</body>
+</html>

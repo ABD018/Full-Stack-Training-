@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Product Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .hidden { 
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Table</h1>
+    <div id="mainTableContainer">
+    <table id="productTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    </div>
+
+    <div id="detailContainer" class="hidden"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() 
+        {
+            fetchProductData();
+            function fetchProductData() 
+            {
+                var req = new XMLHttpRequest();
+                req.open("GET", "https://fakestoreapi.com/products");
+                req.onreadystatechange = function() 
+            {
+                    if (req.readyState == 4) {
+                        if (req.status == 200) {
+                            var products = JSON.parse(req.responseText);
+                            displayProducts(products);
+                        } else {
+                            console.error("Failed to fetch data. Status:", req.status);
+                        }
+                    }
+                };
+                req.onerror = function() {
+                    console.error("Request failed");
+                };
+                req.send();
+            }
+
+            function displayProducts(products) {
+                var tbody = document.querySelector("#productTable tbody");
+                products.forEach(function(product) {
+                    var tr = document.createElement("tr");
+                    var idTd = document.createElement("td");
+                    var titleTd = document.createElement("td");
+                    
+                    var idLink = document.createElement("a");
+                    idLink.href = "#";
+                    idLink.textContent = product.id;
+                    idLink.addEventListener("click", function() {
+                        event.preventDefault();
+                        showProductDetail(product.id);
+                    });
+                    
+                    idTd.appendChild(idLink);
+                    titleTd.textContent = product.title;
+                    
+                    tr.appendChild(idTd);
+                    tr.appendChild(titleTd);
+                    tbody.appendChild(tr);
+                });
+            }
+
+            function showProductDetail(productId) {
+                var req = new XMLHttpRequest();
+                req.open("GET", "https://fakestoreapi.com/products/" + productId);
+                req.onreadystatechange = function() {
+                    if (req.readyState == 4) {
+                        if (req.status == 200) {
+                            var product = JSON.parse(req.responseText);
+                            replaceTableWithProduct(product);
+                        } else {
+                            console.error("Failed to fetch data. Status:", req.status);
+                        }
+                    }
+                };
+                req.onerror = function() {
+                    console.error("Request failed");
+                };
+                req.send();
+            }
+
+            function replaceTableWithProduct(product) {
+                var mainTableContainer = document.getElementById("mainTableContainer");
+                var detailContainer = document.getElementById("detailContainer");
+                mainTableContainer.classList.add("hidden");
+                detailContainer.classList.remove("hidden");
+
+                detailContainer.innerHTML = `
+                    <h2>Product Details</h2>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>ID</td>
+                                <td>${product.id}</td>
+                            </tr>
+                            <tr>
+                                <td>Title</td>
+                                <td>${product.title}</td>
+                            </tr>
+                            <tr>
+                                <td>Price</td>
+                                <td>${product.price}</td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>${product.description}</td>
+                            </tr>
+                            <tr>
+                                <td>Category</td>
+                                <td>${product.category}</td>
+                            </tr>
+                            <tr>
+                                <td>Image</td>
+                                <td><img src="${product.image}" alt="${product.title}" style="max-width: 100px;"></td>
+                            </tr>
+                            <tr>
+                                <td>Rating</td>
+                                <td>${product.rating.rate} (${product.rating.count} reviews)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="backButton" style="background-color : 'gray'; padding : 10px; border-radius : 5px; margin-top : 10px; cursor:pointer;"">Back</button>
+                `;
+                document.getElementById("backButton").addEventListener("click", function() {
+                    detailContainer.classList.add("hidden");
+                    mainTableContainer.classList.remove("hidden");
+                    fetchProductData();
+                });
+                }     
+        });
+    </script>
+</body>
+</html>

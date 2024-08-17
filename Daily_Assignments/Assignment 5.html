@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="Refresh" content="1"> -->
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //var d= new Date("10-23-1979")
+        //var d = new  Date("october 13, 2013 11:13:00");
+        //document.write("Date is : " + d);
+        //var d= new Date(2014, 11, 24, 10, 33, 30, 0);
+        //document.write(d); 
+        //const d = new Date()
+        //document.write("<h2><font face = 'comic sans ms'>Current date and time is " + d+"<br>");
+        //document.write("year : "+ d.getYear()+"<br>");
+        //document.write("UTCDate : "+ d.getUTCDate()+"<br>"); 
+        //document.write("Set Date: "+d.setDate(5)+"<br>");
+        //var d2= new Date(d.setDate(5));
+        //document.write("SetDate : "+d2+"<br>");
+        //document.write("Full Year : "+d.getFullYear()+"<br>");
+        //document.write("Month : "+d.getMonth()+"<br>"); 
+        //document.write("Date : "+d.getDate()+"<br>"); 
+        //document.write("Day : "+d.getDay()+"<br>"); 
+        //document.write("Hours : "+d.getHours()+"<br>"); 
+        //document.write("Minutes: "+d.getMinutes()+"<br>"); 
+        //let s = document.write("Seconds: "+d.getSeconds()+"<br>"); 
+        //document.write("Milliseconds : "+d.getMilliseconds()+"<br>"); 
+        //document.write("Time : "+d.getTime()+"<br>");    
+        //if(d.getSeconds() >= 0 && d.getSeconds() <=15)
+        //{
+        //    document.write("<body bgcolor='red'>");
+        //}
+        document.write("<label>Enter your date of Birth : </label>");
+        document.write("<input type='text' class='date'>");
+        document.write("<label>  Day of Birth : </label>");
+        document.write("<input type='text'> <button onClick='getdate()'>Click</button>");
+        function getdate(dateString)
+        {
+            var daysOfWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday,"Saturday"];
+            var d = new Date();
+            d.getDay();
+        }
+    </script>
+</body>
+</html>

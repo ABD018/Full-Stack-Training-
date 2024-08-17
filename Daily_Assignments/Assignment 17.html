@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji with Moving Pupils</title>
+    <style>
+        canvas 
+        {
+            display: block;
+            margin: 50px auto;
+            background: #f3f3f3;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="emojiCanvas" width="400" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById('emojiCanvas');
+const ctx = canvas.getContext('2d');
+
+let pupilAngle = 0;
+
+function drawFace() 
+{
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // face
+    ctx.beginPath();
+    ctx.ellipse(200, 200, 80, 100, 0, 0, Math.PI * 2); 
+    ctx.fillStyle = 'white';
+    ctx.fill();
+    ctx.stroke();
+
+    // Draw eyes
+    ctx.beginPath();
+    ctx.ellipse(170, 180, 15, 10, 0, 0, Math.PI * 2); // Left eye
+    ctx.fillStyle = 'white';
+    ctx.fill();
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.ellipse(230, 180, 15, 10, 0, 0, Math.PI * 2); // Right eye
+    ctx.fillStyle = 'white';
+    ctx.fill();
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // rotation
+    const leftPupilX = 170 + 5 * Math.cos(pupilAngle);
+    const leftPupilY = 180 + 5 * Math.sin(pupilAngle);
+    const rightPupilX = 230 + 5 * Math.cos(pupilAngle);
+    const rightPupilY = 180 + 5 * Math.sin(pupilAngle);
+
+    ctx.beginPath();
+    ctx.arc(leftPupilX, leftPupilY, 5, 0, Math.PI * 2, true); // Left pupil
+    ctx.fillStyle = 'black';
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(rightPupilX, rightPupilY, 5, 0, Math.PI * 2, true); // Right pupil
+    ctx.fillStyle = 'black';
+    ctx.fill();
+
+    // Draw nose
+    ctx.beginPath();
+    ctx.ellipse(200, 220, 7, 10, 0, 0, Math.PI * 2); 
+    ctx.fillStyle = 'black';
+    ctx.fill();
+
+    // Draw mouth
+    ctx.beginPath();
+    ctx.arc(200, 250, 20, 0, Math.PI, false);
+    ctx.stroke();
+
+    // lines
+    ctx.beginPath();
+    ctx.moveTo(185, 180); // Right edge of left eye
+    ctx.lineTo(245, 180); // Inside right edge of right eye
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
+}
+
+function animate() 
+{
+    pupilAngle += 0.05; 
+    drawFace();
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+    </script>
+</body>
+</html>

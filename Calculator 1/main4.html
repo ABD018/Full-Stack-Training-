@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main4.css">
+</head>
+<body>
+     <table border="5" cellpadding="10" cellspacing="0">
+        <tr>
+            <td colspan="4">
+                <input type="text" id="display" readonly>
+                </td>
+                </tr>
+                <tr>
+                    <td><button id="1" onclick="appendToDisplay(display,'1')">1</button></td>
+                    <td><button id="2" onclick="appendToDisplay(display,'2')">2</button></td>
+                    <td><button id="3" onclick="appendToDisplay(display,'3')">3</button></td>
+                </tr>
+                <tr>
+                    <td><button id="4" onclick="appendToDisplay(display,'4')">4</button></td>
+                    <td><button id="5" onclick="appendToDisplay(display,'5')">5</button></td>
+                    <td><button id="6" onclick="appendToDisplay(display,'6')">6</button></td>
+                    </tr>
+                    <tr>
+                    <td><button id="7" onclick="appendToDisplay(display,'7')">7</button></td>
+                    <td><button id="8" onclick="appendToDisplay(display,'8')">8</button></td>
+                    <td><button id="9" onclick="appendToDisplay(display,'9')">9</button></td>
+                    </tr>
+                <tr>
+                    <td><button id="0" onclick="appendToDisplay(display,'0')">0</button></td>
+                    <td><button id="+" onclick="appendToDisplay(display,'+')">+</button></td>
+                    <td><button id="-" onclick="appendToDisplay(display,'-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button id="*" onclick="appendToDisplay(display,'*')">*</button></td>
+                    <td><button id="/" onclick="appendToDisplay(display,'/')">/</button></td>
+                    <td><button id="%" onclick="appendToDisplay(display,'%')">%</button></td>
+                </tr>
+                <tr>
+                    <td><button id="(" onclick="appendToDisplay(display,'(')">(</button></td>
+                    <td><button id=")" onclick="appendToDisplay(display,')')">)</button></td>
+                    <td><button id="=" onclick="calculate(display)">=</button></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <button onclick="clearToDisplay(display)" id="result">Clear</button>
+                        </td>
+                        </tr>
+<script src="main4.js"></script>
+</body>
+</html>

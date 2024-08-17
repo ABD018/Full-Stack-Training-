@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Interaction</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            background-color: #f0f0f0;
+        }
+
+        .image-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 20px; 
+            margin: 20px;
+        }
+
+        .image-container img {
+            width: 200px;
+            height: 200px;
+            transition: transform 0.3s;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05); 
+        }
+
+        .centered-image {
+            position: fixed;
+            top: 50%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            display: none;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="imager.avif" alt="Image 1" id="image1">
+        <img src="imager2.jpg" alt="Image 2" id="image2">
+    </div>
+
+    <img src="" alt="Centered Image" id="centeredImage" class="centered-image">
+
+    <script>
+        const image1 = document.getElementById('image1');
+        const image2 = document.getElementById('image2');
+        const centeredImage = document.getElementById('centeredImage');
+
+        image1.addEventListener('mouseover', () => {
+            centeredImage.src = image1.src;
+            centeredImage.style.display = 'block';
+            centeredImage.style.width = '700px';
+            centeredImage.style.height = '700px';
+        });
+
+        image2.addEventListener('mouseover', () => {
+            centeredImage.src = image2.src;
+            centeredImage.style.display = 'block';
+            centeredImage.style.width = '700px';
+            centeredImage.style.height = '700px';
+        });
+
+    </script>
+</body>
+</html>

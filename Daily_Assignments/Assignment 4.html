@@ -1,0 +1,188 @@
+<!--calculate the frequency of each element in an array
+calculate the frequency of each element in 2d array, user input mandatory
+reverse array elements in 2d array , user input mandatory
+sorting an array in 2d array (each and every element) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <script>
+     
+        var n=eval(prompt("ENTER SIZE OF rows ARRAY"))
+        var m=eval(prompt("ENTER SIZE OF column ARRAY"))
+    var arr=new Array()
+ 
+ 
+        for(i=0;i<n;i++)
+        {    arr.push([]);
+              for(j=0;j<m;j++)
+            {  arr[i][j]=eval(prompt("enter a value"))
+              }
+        }
+     
+   
+       
+ 
+        let r = arr.length;
+    let c = arr[0].length;
+    let total = r * c;
+ 
+   
+    for (let i = 0; i < total- 1; i++) {
+        for (let j = 0; j < total - i - 1; j++) {
+           
+            let currentR = Math.floor(j / c);
+            let currentC = j % c;
+         
+            let nextR = Math.floor((j + 1) / c);
+            let nextC = (j + 1) % c;
+ 
+       
+            if (arr[currentR][currentC] > arr[nextR][nextC]) {
+                let temp = arr[currentR][currentC];
+                arr[currentR][currentC] = arr[nextR][nextC];
+                arr[nextR][nextC] = temp;
+            }
+        }
+    }
+       
+ 
+     for(i=0;i<n;i++)
+     {
+        for(j=0;j<m;j++)
+        {
+            document.write(arr[i][j]+" ")
+        }
+        document.write("<br>")
+     }
+ 
+    </script> -->
+
+
+            <!-- reverse array elements in 2d array , user input mandatory -->
+            <!-- <script>
+     
+                var n=eval(prompt("ENTER SIZE OF rows ARRAY"))
+                var m=eval(prompt("ENTER SIZE OF column ARRAY"))
+            var arr=new Array()
+         
+         
+                for(i=0;i<n;i++)
+                {    arr.push([]);
+                      for(j=0;j<m;j++)
+                    {  arr[i][j]=eval(prompt("enter a value"))
+                      }
+                }
+               
+              for(i=0;i<n;i++)                
+              {
+                let start=0;
+                let end=n-1;
+         
+                while(start<end)
+                {
+                     let temp=arr[i][end]
+                     arr[i][end]=arr[i][start]
+                     arr[i][start]=temp
+         
+                     start++
+                     end--
+                }
+         
+              }
+         
+              let start = 0;  
+              let end = n- 1;
+             
+              while (start < end) {
+               
+                  let Row = arr[start];
+                  arr[start] = arr[end];
+                  arr[end] =Row;
+                 
+                  start++;
+                  end--;
+              }
+             
+             
+             for(i=0;i<n;i++)
+             {
+                for(j=0;j<m;j++)
+                {
+                    document.write(arr[i][j]+" ")
+                }
+                document.write("<br>")
+             }
+               
+            </script> -->
+
+
+
+ <!-- <script>
+    let arr = [];
+    let row = parseInt(prompt("Enter the number of rows"));
+    let col = parseInt(prompt("Enter the number of columns"));
+    for(let i = 0; i < row; i++)
+    {
+        arr[i] = [];
+        for(let j = 0; j < col; j++)
+        {
+            arr[i][j] = parseInt(prompt(`Enter the element at row ${i+1} column ${j+1}`));
+            }
+            }
+            let freq = {};
+            for(let i = 0; i < row; i++)
+            {
+                for(let j = 0; j < col; j++)
+                {
+                    if(freq[arr[i][j]] === undefined)
+                    {
+                        freq[arr[i][j]] = 1;
+                        }
+                        else
+                        {
+                            freq[arr[i][j]]++;
+                            }
+                            }
+                            }
+                            document.write("Frequency of each element is : <br>");
+                            for(let key in freq)
+                            {
+                                document.write(`${key} -> ${freq[key]}<br>`);
+                                }
+                                </script> -->
+
+                  <script>
+                    let arr = [];
+                    let n = parseInt(prompt("Enter the number of elements"));
+                    for(let i = 0; i < n; i++)
+                    {
+                        arr[i] = parseInt(prompt(`Enter the element at position ${i+1}`));
+                        }
+                        let freq = {};  
+                        for(let i = 0; i < n; i++)
+                        {
+                            if(freq[arr[i]] === undefined)
+                            {
+                                freq[arr[i]] = 1;
+                                }
+                                else
+                                {
+                                    freq[arr[i]]++;
+                                    }
+                                    }
+                                    document.write("Frequency of each element is : <br>");
+                                    for(let key in freq)
+                                    {
+                                        document.write(`${key} -> ${freq[key]}<br>`);
+                                        }
+                                        </script>
+
+</body>
+</html>

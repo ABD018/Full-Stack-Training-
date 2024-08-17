@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Eyes</title>
+    <style>
+        .face 
+        {
+            width: 270px;
+            height: 300px;
+            background-color: #000000; 
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .eye 
+        {
+            width: 50px;
+            height: 70px;
+            background-color: #FFFFFF; 
+            border-radius: 50%;
+            position: absolute;
+            top: 25%;
+        }
+        .pupil 
+        {
+            width: 20px;
+            height: 20px;
+            background-color: #000000; 
+            border-radius: 50%;
+            position: absolute;
+            top: 30px;
+            left: 15px;
+        }
+        .eye.left 
+        {
+            left: 25%;
+        }
+        .eye.right 
+        {
+            right: 25%;
+        }
+        .mouth {
+            margin-top: 20px;
+            width: 120px;
+            height: 50px;
+            background-color: white; 
+            border: 15px solid #000000; 
+            border-radius: 50%;
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="face">
+        <div class="eye left">
+            <div class="pupil" id="left-pupil"></div>
+        </div>
+        <div class="eye right">
+            <div class="pupil" id="right-pupil"></div>
+        </div>
+        <div class="mouth"></div>
+    </div>
+    <script>
+        const leftPupil = document.getElementById('left-pupil');
+        const rightPupil = document.getElementById('right-pupil');
+       
+        let angle = 0;
+ 
+        function movePupils() {
+            const radius = 20; 
+            const speed = 0.05; 
+ 
+            angle -= speed;
+ 
+            const leftX = radius * Math.cos(angle);
+            const leftY = radius * Math.sin(angle);
+            const rightX = radius * Math.cos(angle);
+            const rightY = radius * Math.sin(angle);
+ 
+            if (leftX < 0 && leftY > 0) 
+            {
+                leftPupil.style.width = '20px';
+                leftPupil.style.height = '20px';
+            } 
+            else 
+            {
+                leftPupil.style.width = '15px';
+                leftPupil.style.height = '15px';
+            }
+ 
+            if (rightX < 0 && rightY > 0) 
+            {
+                rightPupil.style.width = '20px';
+                rightPupil.style.height = '20px';
+            } 
+            else 
+            {
+                rightPupil.style.width = '15px';
+                rightPupil.style.height = '15px';
+            }
+ 
+            leftPupil.style.transform = `translate(${leftX}px, ${leftY}px)`;
+            rightPupil.style.transform = `translate(${rightX}px, ${rightY}px)`;
+        }
+ 
+        setInterval(movePupils, 3);
+    </script>
+</body>
+</html>
+ 

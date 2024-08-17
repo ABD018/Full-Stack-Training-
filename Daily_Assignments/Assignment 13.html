@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Lines</title>
+    <style>
+        body 
+        {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+             
+        .line 
+        {
+            position: absolute;
+            background-color: red;
+        }
+
+        .vertical 
+        {
+            width: 15px;
+            height: 100%;
+        }
+
+        .horizontal 
+        {
+            width: 100%;
+            height: 15px;
+        }
+
+        #line1 { left: 10%; background-color: red; }
+        #line2 { left: 30%; background-color: blue; }
+        #line3 { left: 50%; background-color: green; }
+        #line4 { left: 70%; background-color: yellow; }
+        #line5 { left: 90%; background-color: purple; }
+
+        #line6 { top: 25%; background-color: cyan; }
+        #line7 { top: 75%; background-color: magenta; }
+    </style>
+</head>
+<body>
+    <div id="line1" class="line vertical"></div>
+    <div id="line2" class="line vertical"></div>
+    <div id="line3" class="line vertical"></div>
+    <div id="line4" class="line vertical"></div>
+    <div id="line5" class="line vertical"></div>
+    
+    <div id="line6" class="line horizontal"></div>
+    <div id="line7" class="line horizontal"></div>
+    
+    <script>
+        function animateVerticalLine(line) {
+            let position = -100;
+            const speed = 0.05;
+
+            setInterval(() => {
+                position += speed;
+                line.style.top = position + 'vh';
+
+                if (position >= 100) {
+                    position = -100;
+                }
+            }, 20); 
+        }
+
+        function animateHorizontalLine(line) {
+            let position = -100;
+            const speed = 0.02; 
+
+            setInterval(() => {
+                position += speed;
+                line.style.left = position + 'vw';
+
+                if (position >= 100) {
+                    position = -100;
+                }
+            }, 20); 
+        }
+
+        animateVerticalLine(document.getElementById('line1'));
+        animateVerticalLine(document.getElementById('line2'));
+        animateVerticalLine(document.getElementById('line3'));
+        animateVerticalLine(document.getElementById('line4'));
+        animateVerticalLine(document.getElementById('line5'));
+        animateHorizontalLine(document.getElementById('line6'));
+        animateHorizontalLine(document.getElementById('line7'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+tr button{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+table{
+    background-color: #ffc0cb;
+    border-color: black;
+    margin-top: 200px;
+    margin-left: 600px;
+}
+table #display{
+    margin-left: 15px;
+}
+table #result{
+    margin-left: 60px;  
+}

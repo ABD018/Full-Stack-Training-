@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Emoji</title>
+    <style>
+        canvas {
+            display: block;
+            margin: 50px auto;
+            background: #f3f3f3;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="emojiCanvas" width="400" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById('emojiCanvas');
+const ctx = canvas.getContext('2d');
+
+let angle = 0;
+
+function drawFace() 
+{
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.save();
+    ctx.translate(170, 180); 
+    ctx.rotate(angle); 
+    ctx.translate(-170, -180);
+
+    //face
+    ctx.beginPath();
+    ctx.ellipse(200, 200, 80, 100, 0, 0, Math.PI * 2);
+    ctx.fillStyle = 'white';
+    ctx.fill();
+    ctx.stroke();
+
+    //eyes
+    ctx.beginPath();
+    ctx.arc(170, 180, 15, 0, Math.PI * 2); //Left eye
+    ctx.fillStyle = 'black';
+    ctx.fill();
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(230, 180, 15, 0, Math.PI * 2); //Right eye
+    ctx.fillStyle = 'black';
+    ctx.fill();
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(170, 180, 5, 0, Math.PI * 2); //Left pupil
+    ctx.fillStyle = 'white';
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(230, 180, 5, 0, Math.PI * 2); //Right pupil
+    ctx.fillStyle = 'white';
+    ctx.fill();
+
+    // nose
+    ctx.beginPath();
+    ctx.arc(200, 220, 7, 0, Math.PI * 2); 
+    ctx.fillStyle = 'black';
+    ctx.fill();
+
+    // mouth
+    ctx.beginPath();
+    ctx.arc(200, 250, 20, 0, Math.PI); 
+    ctx.stroke();
+
+    ctx.restore();
+}
+
+function animate() 
+{
+    angle += 0.04; 
+    drawFace();
+    requestAnimationFrame(animate); 
+}
+
+animate();
+
+    </script>
+</body>
+</html>

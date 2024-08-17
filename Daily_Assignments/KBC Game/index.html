@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBC Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="welcome-page" class="page">
+        <div class="content">
+            <img src="" alt="" class="kbc-logo">
+            <div id="welcome-message">
+                <h1>Welcome To KBC</h1>
+            </div>
+            <div class="buttons">
+                <button onclick="showInstructions()">Instructions</button>
+                <button onclick="startGame()">Play Now</button>
+                <button onclick="showAbout()">About</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-page" class="page hidden">
+        <div class="navbar">
+            <ul id="prizes">
+                <li>Q15: ₹1 Crore</li>
+                <li>Q14: ₹5000000</li>
+                <li>Q13: ₹2500000</li>
+                <li>Q12: ₹1250000</li>
+                <li>Q11: ₹640000</li>
+                <li>Q10: ₹320000</li>
+                <li>Q9: ₹160000</li>
+                <li>Q8: ₹80000</li>
+                <li>Q7: ₹40000</li>
+                <li>Q6: ₹20000</li>
+                <li>Q5: ₹10000</li>
+                <li>Q4: ₹5000</li>
+                <li>Q3: ₹3000</li>
+                <li>Q2: ₹2000</li>
+                <li>Q1: ₹1000</li>
+            </ul>
+        </div>
+        <div class="game-content">
+            <!-- <div class="logo">
+                <img src="small-logo.png" alt="">
+            </div> -->
+            <div class="lifelines">
+                <div class="lifeline" id="lifeline-50-50">50:50</div>
+                <div class="lifeline" id="lifeline-audience">Audience Poll</div>
+                <div class="lifeline" id="lifeline-phone">Phone a Friend</div>
+            </div>
+            
+            <div class="question-container">
+                <!-- <img src="question-image.png" alt="Question Image" class="question-image"> -->
+                <div class="timer">
+                    <svg class="circle">
+                        <circle cx="25" cy="25" r="20"></circle>
+                        <circle cx="25" cy="25" r="20" id="progress"></circle>
+                    </svg>
+                    <div class="timer-text" id="timer-text">40</div>
+                </div>
+                <div id="question-number" class="question-number">Question: 1</div>
+                <div id="question">Question text here</div>
+                <div id="choices">
+                    <button onclick="checkAnswer(0)">Choice 1</button>
+                    <button onclick="checkAnswer(1)">Choice 2</button>
+                    <button onclick="checkAnswer(2)">Choice 3</button>
+                    <button onclick="checkAnswer(3)">Choice 4</button>
+                    <button id="quit-button">Quit</button>
+                </div>
+            </div>
+            <div class="score-container">
+                <span>Total Score: <span id="total-score">0</span></span>
+            </div>  
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

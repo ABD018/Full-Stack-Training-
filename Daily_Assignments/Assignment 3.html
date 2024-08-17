@@ -1,0 +1,114 @@
+<!-- input range an elements in a single dimensional array and print sum of all the even and odd numbers separetly -->
+ <!-- input range an elements in a double dimensional array and print sum of all the even and odd numbers separetly  -->
+  <!-- range an elements in a single dimensional array and find greatest number among them -->
+   <!-- input range an elements in a double dimensional array and find greatest number among them -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = parseInt(prompt("enter the total number of elements : "));
+        let arr = [];
+
+        //input range an elements in a single dimensional array and print sum of all the even and odd numbers separately
+
+        for(let i = 0; i<num; i++)
+        {
+            let val = prompt("enter element " + (i+1) + ": ");
+            arr.push(val);
+        }
+        //document.write("the entered array is : "+ arr);
+        let sum_even = 0;
+        let sum_odd = 0;
+        let greatest = arr[0];
+        for(let i = 0; i<num; i++)
+        {
+            if(arr[i]%2 == 0)
+            {
+                sum_even += parseInt(arr[i]);
+            }
+                else
+                {
+                    sum_odd += parseInt(arr[i]);
+                }
+         }
+        document.write("<br>sum of even numbers : " + sum_even);
+        document.write("<br>sum of odd numbers : " + sum_odd);
+
+        //range an elements in a single dimensional array and find greatest number among them 
+
+        for(let i = 1; i<arr.length; i++)
+        {
+            if(arr[i]>greatest)
+            {
+                greatest = arr[i];
+            }
+        }
+        document.write("<br>the greatest element is : "+ greatest);
+
+
+        //input range an elements in a double dimensional array and print sum of all the even and odd numbers separately
+
+        /*let row = parseInt(prompt("enter the number of rows : "));
+        let col = parseInt(prompt("enter the number of columns : "));
+        let arr2d = [];
+        let sum_even = 0;
+        let sum_odd = 0;
+        for(let i = 0; i<row; i++)
+        {
+            arr2d[i] = [];
+            for(let j = 0; j<col; j++)
+            {
+                let val = prompt("enter element " + i + "," + j);
+                arr2d[i][j] = val;
+            }
+        }
+        let result = "";
+        for(let i = 0; i<arr2d.length; i++)
+        {
+            result += arr2d[i] + " " +"<br>";
+        } 
+        document.write("the entered array is : <br>"+result);
+        for(let i = 0; i<row; i++)
+        {
+            for(let j = 0; j<col; j++)
+            {
+                if(arr2d[i][j] % 2 == 0)
+                {
+                   sum_even += parseInt(arr2d[i][j]);
+                }
+                else
+                {
+                    sum_odd += parseInt(arr2d[i][j]);
+                }
+            }
+        }
+        document.write("<br>Even Numbers Sum : "+sum_even);
+        document.write("<br>Odd Numbers Sum : "+sum_odd);*/
+
+        // input range an elements in a double dimensional array and find greatest number among them 
+
+        /*let greatest = 0;
+        for(let i = 0; i<row; i++)
+        {
+            arr2d[i] = [];
+            for(let j = 0; j<col; j++)
+            {
+                let val = prompt("enter element " + i + "," + j);
+                arr2d[i][j] = parseInt(val);
+                if(arr2d[i][j] > greatest)
+                {
+                    greatest = arr2d[i][j];
+                }
+            }
+        }
+        document.write("the greatest is : "+greatest);*/
+
+    </script>
+</body>
+</html>

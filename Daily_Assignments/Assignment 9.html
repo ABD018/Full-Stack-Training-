@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 400px;
+            padding: 40px;
+            border: 1px solid #ccc;
+            background-color: lightgray;
+            text-align: center;
+            position: relative;
+        }
+        #content {
+            margin: auto;
+        }
+        .outside {
+            position: absolute;
+            top: 60px;
+            right: -220px; 
+        }
+    </style>
+</head>
+<body>
+    <form action="#" name="f">
+    <div class="container">
+        <div id="content">
+            <h2>Inside the Box</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum obcaecati sunt recusandae ipsa sapiente, enim, assumenda temporibus sed, possimus sit ipsam doloremque ducimus? Neque nostrum dignissimos rem atque quas assumenda!.</p>
+        </div>
+        <div class="outside">
+            <label for="colorSelect">Choose a text color:</label>
+            <select name="colorSelect" onchange="changeTextColor()">
+                <option value="black">Black</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+                <option value="purple">Purple</option>
+                <option value="orange">Orange</option>
+            </select>
+        </div>
+    </div>
+</form>
+    <script>
+        function changeTextColor() {
+            var selectedColor = document.f.colorSelect.value;
+            window.content.style.color = selectedColor;
+        }
+    </script>
+</body>
+</html>
