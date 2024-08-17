@@ -1,0 +1,94 @@
+<html>
+<head>
+<script>
+document.write("<center><h2 algin'center'><font face='comic sans ms' color='red'><u>Using arrays</u></h2></center>")
+/*const array1 = ["eat", "sleep"];
+const myList = [ ];
+const numberArray = [ 2, 4, 6, 8];
+const stringArray = [ 'eat', 'work', 'sleep'];
+//const newData = ['work', 'exercise', 1, true];
+const newData = [
+    {'task1': 'exercise'},
+    [1, 2 ,3],
+    function hello() { console.log('hello')}
+];
+const firstElement = newData[0];
+const task1Value = firstElement.task1;
+const exerciseValue = firstElement['task1']; 
+
+console.log('task1:', task1Value); 
+console.log('exercise:', exerciseValue); 
+
+const innerArray = newData[1];
+
+for (const element of innerArray) {
+    console.log(element);
+}
+
+const myFunction = newData[2];
+myFunction(); */
+
+let dailyActivities = ['eat', 'sleep'];
+dailyActivities.push('exercise');
+
+console.log(dailyActivities); 
+
+//add an element at the start
+dailyActivities.unshift('work'); 
+
+console.log(dailyActivities); 
+
+// this will add the new element 'exercise' at the 2 index
+dailyActivities[2] = 'exercise';
+console.log(dailyActivities);
+
+// this will add the new element 'exercise' at the 5 index
+dailyActivities[5] = 'exercise';
+
+console.log(dailyActivities); // ["eat", "sleep", undefined, "exercise"]
+
+// remove the last element
+dailyActivities.pop();
+console.log(dailyActivities); 
+
+const removedElement = dailyActivities.pop();
+
+console.log(removedElement); 
+console.log(dailyActivities);  
+
+// remove the first element
+/*dailyActivities.shift();
+console.log(dailyActivities);
+
+console.log(dailyActivities.length);
+
+// sorting elements in the alphabetical order
+dailyActivities.sort();
+console.log(dailyActivities);
+
+//finding the index position of string
+const position = dailyActivities.indexOf('work');
+console.log(position); // 2
+
+// slicing the array elements
+const newDailyActivities = dailyActivities.slice(1);
+console.log(newDailyActivities); 
+
+// concatenating two arrays
+let newRoutine = ['eat'];
+const routine = dailyActivities.concat(newRoutine);
+console.log(routine); 
+
+let MathScore = [
+    ['John Doe', 20, 60, 'A'],
+    ['Jane Doe', 10, 52, 'B'],
+    ['Petr Chess', 5, 24, 'F'],
+    ['Ling Jess', 28, 43, 'A'],
+    ['Ben Liard', 16, 51, 'B']
+];
+console.log(MathScore[0][0]);*/
+</script>
+</head>
+<body>
+</body>
+</html>

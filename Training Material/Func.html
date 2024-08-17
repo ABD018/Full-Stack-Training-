@@ -1,0 +1,87 @@
+	<html>
+	<head>
+	<title>My First Javascript document</title>
+	<h2 align="center"><font face="comic sans ms" color="red"><u>Learning Javascript</u></h2>
+	<script Language="JAVASCRIPT">
+	function f1()
+	{
+	document.write("<h2>Non perameterized function performing just an action<br>")
+	}
+	function f2(a)
+	{	
+	document.write("Perameterized function and the perameter is "+a+"<br>")
+	}
+	function f3(a,b)
+	{
+	return a+b	
+	}
+	function f4()
+	{
+	var i=eval(prompt("Enter first number"))	
+	var j=eval(prompt("Enter second number"))	
+	document.write("The sum of "+i+" and "+j+" is "+f3(i,j)+"<br>")
+	}
+	/*var a=f1()
+	document.write(a+"<br>");
+	document.write(f1());*/
+	/*var val=window.f1()
+	document.write(val+"<br>")
+	f2("Jasmeet")
+	f4()
+	var result=f3(56,23)
+	document.write("Ths sum of 56 and 23 is "+result);*/
+	
+	function getName()
+	{
+	if(document.f.t1.value=="")
+	{
+	alert("Plz enter your name")	
+	}
+	else
+	{
+	alert("Your name is "+document.f.t1.value)	
+	}
+	}
+
+
+	
+	function sum()
+	{
+	document.f.t3.value=eval(document.f.t1.value)+eval(document.f.t2.value)
+	}
+
+	function sub()
+	{
+	document.f.t3.value=eval(document.f.t1.value)-eval(document.f.t2.value)
+	}
+
+	function multi()
+	{
+	document.f.t3.value=eval(document.f.t1.value)*eval(document.f.t2.value)	
+	}
+
+	function div()
+	{
+	document.f.t3.value=eval(document.f.t1.value)/eval(document.f.t2.value)	
+	}
+
+
+	</script>
+	</head>
+	<body>
+	<form name="f">
+	<!--<h2>Enter your name : <input type="text" name="t1" placeholder="ex:John">
+	<input type="button" value="Get name" onClick="getName()">-->
+	 
+	Enter First number : <input type="number" name="t1">
+	Enter Second number : <input type="number" name="t2">
+	<br>
+	Result : <input type="number" name="t3">
+	<br>
+	<input type="button" value="Add--" onClick="sum()">
+	<input type="button" value="Sub--" onClick="sub()">
+	<input type="button" value="Multi--" onClick="multi()">
+	<input type="button" value="Div--" onClick="div()">
+	</form>
+	</body>
+	   </html>    

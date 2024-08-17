@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+   border: 2px double #a43356;
+   margin: 5px;
+   padding: 5px;
+}
+#d1 {
+   position: relative;
+   height: 10em;
+}
+#d2 {
+   position: absolute;
+   width: 20%;
+   bottom: 10px; /*relative to parent d1*/
+}
+#d3 {
+   position: fixed;
+   width: 30%;
+   top:10em; /*relative to viewport*/
+}
+div.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 10px;
+  background-color: green;
+  border: 2px solid #4CAF50;
+}
+</style>
+</head>
+<body>
+<div id="d1">This is demo paragraph. This is demo paragraph. 
+This is demo paragraph. This is demo paragraph. 
+This is demo paragraph. This is demo paragraph. 
+This is demo paragraph. This is demo paragraph. 
+<mark>relative</mark>
+<div id="d2"><mark>absolute</mark></div>
+<div id="d3"><mark>fixed</mark></div>
+</div>
+<div class="sticky">This is Sticky</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

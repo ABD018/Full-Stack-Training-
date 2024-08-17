@@ -1,0 +1,58 @@
+
+  #myhead {
+	font-size: 50px;
+	font-family: verdana;
+	text-decoration: underline;
+	color: #ff00cc;
+  }
+  
+  .content {
+	margin-top: 50px;
+  }
+  
+  .myheading {
+	margin-left: 30px;
+	font-family: verdana;
+	font-weight: bold;
+  }
+  
+  p {
+	font-family: verdana;
+  }
+  
+  .loginbox {
+	margin-top: 50px;
+	height: 250px;
+	border: 1px solid blue;
+	border-radius: 5px;
+	background: #e8eefa;
+	padding: 10px;
+  }
+  
+  span {
+	font-family: verdana;
+	font-size: 12px;
+	padding-bottom: 3px;
+  }
+  
+  #acc {
+	font-size: 14px;
+	font-weight: bold;
+  }
+  
+  .gap {
+	margin-top: 20px;
+  }
+  
+  .footerlink {
+	margin-top: 30px;
+  }
+  
+  .footerbox {
+	margin-top: 30px;
+	border: 1px solid blue;
+	height: 100px;
+	background: #e8eefa;
+	padding: 10px;
+  }
+  

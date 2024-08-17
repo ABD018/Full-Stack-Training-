@@ -1,0 +1,197 @@
+	<html>
+	<head>
+	<title>My First Javascript document</title>
+	<h2 align="center"><font face="comic sans ms" color="red"><u>Learning Javascript</u></h2><center>
+	<script Language="JAVASCRIPT">
+	/*var arr=new Array(3)
+	document.write("<h2>Lenght is "+arr.length+"<br>")
+	arr[0]="Sam"
+	arr[1]="Bob";
+	arr[2]="Richard";
+	document.write("The value of 2nd index is "+arr[2]+"<br>")
+	//for(i=0;i<3;i++)
+	for(i=0;i<arr.length;i++)
+	{
+	document.write("The value of "+i+" index is "+arr[i]+"<br>")	
+	}*/
+	
+	/*document.write("Second Array-------------<br>");
+
+	var arr2=new Array("Sachin","Kambli","Ajhar","Jadeja")
+	document.write("Length is "+arr2.length+"<br>")
+	document.write("The value of 1st index is "+arr2[1]+"<br>")
+	//for(i=0;i<4;i++)
+	for(i=0;i<arr2.length;i++)
+	{
+	document.write("The value of "+i+" index is "+arr2[i]+"<br>")	
+	}*/
+	
+	/*document.write("Third Array------------<br>")
+	var arr3=new Array(3,5)
+	document.write("Length is "+arr3.length+"<br>")*/
+		
+	/*document.write("Fourth Array-------------<br>");
+	var arr4=new Array("Jasmeet",32,true);
+	for(i=0;i<arr4.length;i++)
+	{
+	document.write("The value of "+i+" index is "+arr4[i]+"<br>")	
+	}*/
+
+	/*var arr=new Array();
+	arr.push(["Jasmeet",42,"23 special wing"])
+	arr.push(["Rakesh",43]);
+	document.write("Length is  : "+arr.length+"<br>");
+	for(i=0;i<arr.length;i++)
+	{
+		document.write(i+1+"st Record : <br>")
+		for(j=0;j<arr[i].length;j++)
+		{
+			document.write(arr[i][j] + " : ")
+			
+		}
+		document.write("<br>")
+	}*/
+
+	
+	/*var list=[["Jasmeet",42,"23 special wing premnagar dehradun"],["Rakesh",43,"21/34 Ajapur"]]
+	document.write("length is : "+list.length+"<br>")
+	for(i=0;i<list.length;i++)
+	{
+		document.write(i+1+"st Record : <br>")
+		for(j=0;j<list[i].length;j++)
+		{
+			//document.write(list[i][j] + " : ")
+			document.write(list.pop())
+			
+		}
+		document.write("<br>")
+	}
+	document.write(list[0][0]);
+	document.write(list.length);*/
+
+	 //document.write("Array functions--------------<br>")
+
+	//delete------
+/*arr = ["I", "go", "home"];
+alert( arr[1] ); 
+delete arr[1]; 
+alert( arr[1] ); 
+alert( arr.length ); */
+
+//Splice---------------
+/*arr = ["I", "study", "JavaScript"];
+alert(arr.length)
+arr.splice(1, 1); 
+alert( arr ); 
+alert(arr.length)*/
+
+/*arr = ["I", "study", "JavaScript", "right", "now"];
+arr.splice(0, 3, "Let's", "dance");
+alert( arr )*/
+
+/*arr = ["I", "study", "JavaScript", "right", "now"];
+removed = arr.splice(0, 2);
+alert( removed ); 
+alert(arr)*/
+
+/*let arr = ["I", "study", "JavaScript"];
+arr.splice(2, 0, "complex", "language");
+alert( arr ); */
+
+/*arr = [1, 2, 5];
+arr.splice(-1, 0, 3, 4);
+alert( arr ); */
+
+//Slice---------
+arr = ["t", "e", "s", "t"];
+alert( arr.slice(1, 3) ); 
+alert( arr.slice(-2) );
+alert(arr)
+
+//Concate---------------
+/*arr = [1, 2];
+alert( arr.concat([3, 4]) ); 
+alert( arr.concat([3, 4], [5, 6]) ); 
+alert(arr)*/
+
+//Searching array-------------
+/*arr = [1, 0, false];
+alert( arr.indexOf(0) ); 
+alert( arr.indexOf(false) ); 
+alert( arr.indexOf(null) ); 
+alert( arr.includes(1) ); */
+
+//Find--------------
+/*users = [
+  {id: 1, name: "Jasmeet"},
+  {id: 2, name: "Sumit"},
+  {id: 3, name: "Amit"}
+];
+user = users.find(item => item.id == 1);
+alert(user.name); */
+
+/*var car = {
+  name: "ford",
+  color: "black",
+  model: "mustang" 
+}
+
+for (var key in car) { 
+  alert(`${key} = ${car[key]}`);
+  alert(key +" = "+car[key]);
+}*/
+
+//Filter----------
+/*users = [
+  {id: 1, name: "Jasmeet"},
+  {id: 2, name: "Rakesh"},
+  {id: 3, name: "Sumit"}
+];
+someUsers = users.filter(item => item.id < 3);
+alert(someUsers.length); */
+
+//Map---------------
+/*lengths = ["Jasmeet", "Rakesh", "Sumit"].map(item => item.length);
+alert(lengths); */
+
+//Sort-------------
+/*arr = [ 5, 1, 9 ];
+arr.sort();
+alert( arr ); 
+
+arr = [ "Rakesh", "Sumit", "Amit" ];
+arr.sort();
+alert( arr ); */
+
+//Reverse--------------
+/*arr = [1, 2, 3, 4, 5];
+arr.reverse();
+alert( arr ); */
+
+//Split and join
+/*names = 'Jasmeet, Sumit, Amit';
+arr = names.split(', ');
+for (name of arr) {
+  alert( `A message to ${name}.` ); 
+}*/
+
+/*arr = 'Jasmeet, Sumit, Amit, Babbal'.split(', ', 2);
+alert(arr); */
+
+/*str = "test";
+alert( str.split('') );*/
+
+/*arr = ['Jasmeet', 'Sumit', 'Amit'];
+str = arr.join(';'); 
+alert( str ); */
+
+//Reduce -------------
+/*arr = [1, 2, 3, 4, 5];
+result = arr.reduce((result, value) => result + value);*/
+alert(result);
+
+	</script>
+	</head>
+	<body>
+	</body>
+	</html>

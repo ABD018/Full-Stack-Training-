@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Learning Html Forms
+        </title>
+        <style>
+            form legend
+            {
+                font-weight: bold;
+            }
+            form
+            {
+         font-family: gabriola;
+         font-size: 1.2rem;
+          color: rgb(12, 97, 196);
+
+            }
+            label
+            {
+                width:10%;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="f" id="form1" method="post" action="a.php" enctype="multipart/form-data" oninput="x.value=parseInt(rate.value)+parseInt(nu.value)">
+            <fieldset>
+                <legend>Information Form</legend>
+<label for="fname">First name :</label><input type="text" name="fname" id="fname" placeholder="Ex : Jasmeet" required size="40" minlength="3" maxlength="10" autocomplete="off">
+<br>
+<label for="lname">Last name :</label><input type="text" name="lname" value="Singh" readonly>
+<br>
+<label for="ad">Address :</label><textarea rows="10" cols="30" name="ad" placeholder="Ex :23 special wing" disabled></textarea>
+    <br>
+<label for="password">Password :</label><input type="password" name="password" autofocus>xxxx
+<br>
+<label for="bd">DOB :</label><input type="date" name="bd" max="1979-12-31" min="2000-01-02">No time zone :<input type="datetime-local" id="birthdaytime" name="birthdaytime">
+<br>
+Hobbies<br>
+<label for="cr">Cricket :</label><input type="checkbox" name="cr">
+<label for="tr">Trekking :</label><input type="checkbox" name="tr">
+<br>
+
+<label for="email">Email :</label><input type="email" name="email" required>
+<br>
+<label for="re">Resume :</label><input type="file" name="re" multiple>
+<input type="hidden" value="<?php echo $var ?>" name="hi">
+<br>
+<label for="mo">Joining Month :</label><input type="month" name="mo">
+
+<br>
+Gender:<br>
+<label for="male">Male :</label><input type="radio" name="gender">
+<label for="female">Female :</label><input type="radio" name="gender">
+<br>
+<label for="city">Your city:</label>
+<select id="city" name="city">
+  <option value="dehradun">Dehradun</option>
+  <option value="mumbai">Mumbai</option>
+  <option value="surat">Surat</option>
+  <option value="amritsar">Amritsar</option>
+</select>
+<br>
+<label for="co">Company :</label>
+<input list="company" id="co" name="co">
+  <datalist id="company">
+    <option value="Microsoft">
+    <option value="Meta">
+    <option value="Spacex">
+    <option value="Amazon">
+    <option value="Oracle">
+  </datalist>
+<br>
+<label for="cc">Country code:</label>
+  <input type="text" id="cc" name="cc"
+  pattern="[A-Za-z]{3}" title="Three letter country code" required>
+  <br>
+<label for="rate">Rate your self :</label><input type="range" name="rate" min="0" max="50">
+<br>
+<br>
+<label for="nu">Age :</label><input type="number" name="nu" min="1" max="50" step="10" value="30">
+<br>
+<output name="x" for="rate nu"></output>
+<br>
+<label for="se">Search City :</label><input type="search" name="se">
+<br>
+<label for="te">Telephone :</label><input type="tel" name="te" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+<br>
+<label for="ti">Birth Time :</label><input type="time" name="ti">
+<br>
+<label for="we">Website :</label><input type="url" name="we">
+<br>
+<label for="wee">Week :</label><input type="week" name="wee">
+<br>
+<label for="co">Favorite Color :</label><input type="color" name="co" id="co">
+<br>
+<input type="submit" value="Register">
+<button type="button" onclick="alert('An Output')">Click Me!</button>
+<input type="reset">
+<input type="image" src="images/cartoon.jpg" alt="Submit" width="48" height="48">
+</fieldset>
+        </form>
+    </body>
+</html>

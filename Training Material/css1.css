@@ -1,0 +1,24 @@
+body {
+border: 20px groove red;/*inset outset groove double dotted dashed solid ridge*/
+margin: 30px;
+}
+#main {
+border: 15px groove orange;
+width: 600px;
+/*height:50px;
+overflow:hidden;*/
+margin: 50px; /* all four sides */
+padding: 30px; /* all four sides */
+}
+h1,p {
+border: 2px inset green;
+padding: 30px;
+}
+h1 {
+margin: 20px 12px 15px 30px; /* 5 top, 20 right and left, 5 bottom */
+padding-left: 30px;
+}
+p {
+margin-top: 10px; /* all four sides */
+padding-left: 25px;
+}

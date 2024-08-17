@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/*  a[target] {
+  background-color: yellow;
+}  */
+/* a[target="_blank"] {
+  background-color: green;
+}  */
+/*[title~="mytitle"] {
+  border: 5px solid red;
+}*/
+/*[class|="my"] {
+  background: yellow;
+} */
+/*[class^="my"] {
+  background: magenta;
+} */
+/*[class$="my"] {
+  background: cyan;
+} */
+[class*="yo"] {
+  background: lime;
+} 
+input[type="text"] {
+  width: 150px;
+  display: block;
+  margin-bottom: 10px;
+  background-color: yellow;
+}
+
+input[type="button"] {
+  width: 120px;
+  margin-left: 35px;
+  display: block;
+} 
+</style>
+</head>
+<body>
+
+
+<a href="#">css1.html</a>
+<a href="#" target="_blank">css1.html</a>
+<a href="#" target="_self" title="mytitle">css1.html</a>
+<br>
+<a href="#" class="my-my">css1.html</a>
+<a href="#" class="my-your">css1.html</a>
+<a href="#" class="mymy-my">css1.html</a>
+
+<p title="mytitle">This paragraph has a title of 'mytitle'.</p>
+<p title="mytitle anotherword">This paragraph matches because 'mytitle' is one of the words.</p>
+<p title="anotherword mytitle morewords">This paragraph matches too.</p>
+<p title="notmatchingtitle">This paragraph does not match.</p>
+
+<br>
+<input type="text">
+<br>
+<input type="button">
+</body>
+</html>
+
+

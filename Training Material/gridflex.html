@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Grid and Flex Layout</title>
+<style>
+*
+{
+box-sizing: border-box;
+}
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        display: grid;
+        grid-template-areas:
+            "header header header"
+            "sidebar content content"
+            "footer footer footer";
+        grid-template-columns: 200px 1fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+    }
+
+    header, footer, aside, main {
+        padding: 20px;
+    }
+
+    header {
+        grid-area: header;
+        background-color: #333;
+        color: white;
+    }
+
+    footer {
+        grid-area: footer;
+        background-color: #333;
+        color: white;
+    }
+
+    aside {
+        grid-area: sidebar;
+        background-color: #f4f4f4;
+    }
+
+    main {
+        grid-area: content;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .content-item {
+        padding: 20px;
+        margin: 10px;
+        background-color: #ccc;
+        flex: 1 0 25%;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .content-item {
+            flex-basis: 33.33% ;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .content-item {
+            flex-basis: 50% ;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .content-item {
+            flex-basis: 100% ;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Header</h1>
+    </header>
+    <aside>
+        <h2>Left Sidebar</h2>
+    </aside>
+    <main>
+        <div class="content-item">Content 1</div>
+        <div class="content-item">Content 2</div>
+        <div class="content-item">Content 3</div>
+        <div class="content-item">Content 4</div>
+        <div class="content-item">Content 5</div>
+        <div class="content-item">Content 6</div>
+        <div class="content-item">Content 7</div>
+        <div class="content-item">Content 8</div>
+        <div class="content-item">Content 9</div>
+        <div class="content-item">Content 10</div>
+        <div class="content-item">Content 11</div>
+        <div class="content-item">Content 12</div>
+    </main>
+    <footer>
+        <h3>Footer</h3>
+    </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <style>
+/* ul {
+    list-style-type: square;
+}*/
+ol {
+    list-style-type: upper-roman;
+	background-color:red;
+}
+ol.in li {
+    list-style-position: inside;
+}
+ol.out li {
+    list-style-position: outside;
+}
+/*ul li {
+    list-style-image: url("ic.png");
+    background-position: 0px 5px;    
+    background-repeat: no-repeat;
+    padding-left: 20px;
+} */
+ul {
+    list-style: square inside url("images/bullet.png");
+} 
+ul {
+    padding: 0;
+    list-style: none;
+    background: #f2f2f2;
+}
+ul li {
+    display: inline-block;
+}
+ul li a {
+    display: block;
+    padding: 10px 25px;
+    color: #333;
+    text-decoration: none;
+}
+ul li a:hover {
+    color: #fff;
+    background: #939393;
+}
+        </style>
+    </head>
+    <body>
+<ul>
+    <li>Jasmeet</li>
+    <li>Amit</li>
+    <li>Sumit</li>
+</ul>
+<ul>
+    <li><a>Jasmeet</a></li>
+    <li><a>Amit</a></li>
+    <li><a>Sumit</a></li>
+</ul>
+<ol class="out">
+    <li>Jasmeet</li>
+    <li>Amit</li>
+    <li>Sumit</li>
+</ol>
+
+    </body>
+</html>

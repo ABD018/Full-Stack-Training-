@@ -1,0 +1,28 @@
+<html>
+<head>
+
+<style>
+    .flex-container{
+        display:flex;
+        flex-flow:row wrap;
+        height:150px;
+    }
+    .flex-item{
+        padding:0 10px;
+        border: 1px solid #ccc;
+        margin: 5px;
+        flex:1 0 auto;
+    }
+    .flex-item:nth-child(1){align-self:flex-start}
+    .flex-item:nth-child(2){align-self:center}
+    .flex-item:nth-child(3){align-self:flex-end}
+</style>
+</head>
+<body>
+<div class="flex-container">    
+    <div class="flex-item"> auto </div>    
+    <div class="flex-item"> auto </div>        
+    <div class="flex-item"> auto </div>        
+</div>   
+</body>
+</html>

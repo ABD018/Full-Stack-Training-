@@ -1,0 +1,61 @@
+/* the styles for the body element */
+body{
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 84%;
+margin: 0;
+padding: 0; }
+/* the styles for the page division */
+#myt
+{
+width:100%;
+background-color:blue;
+font-size:40px;
+color:white;
+font-family:verdana;
+text-align:center;
+}
+#page
+{
+width: 80%;
+margin:0px auto;
+border: 2px groove red;
+border-top:none;
+padding:0px;
+}
+/* the styles used in the header division */
+img {
+margin-right:15px; 
+width:100px;
+height:100px;
+}
+h1, h3 {
+color: #ff00cc;
+margin-bottom: 0; }
+h1 {
+font-size: 160%;
+margin-top: 0px; }
+h3 {
+font-size: 105%;
+font-style: italic;
+margin-top: 40px; }
+/* the styles used in the main division */
+h2 {
+font-size: 130%;
+margin-top: 20px;
+margin-bottom: 20px; }
+.speakers {
+line-height: 20px;
+margin-top: 50px; 
+}
+a { font-weight: bold; }
+a:link { color: red; }
+a:visited { color: #facd8a; }
+a:active { color: green; }
+a:hover { color: magenta; }
+#main p { margin-top: 50px;color:#00ccff}
+
+/* the styles for the footer division */
+#footer p {
+font-size: 100%;
+text-align: right;
+margin-top: 30px; }

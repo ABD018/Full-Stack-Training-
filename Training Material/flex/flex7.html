@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .flex-container {
+        display: flex;
+        flex-wrap: nowrap; 
+        width: 800px; 
+        border: 2px solid #000;
+        overflow: hidden;
+    }
+    .flex-item, .flex-item2 {
+        width: 200px; /* Width larger than container to force shrinking */
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin: 5px;
+    }
+    .flex-item {
+        flex-shrink: 1;
+        background-color: skyblue;
+    }
+    .flex-item2 {
+        flex-shrink: 2;
+        background-color: hotpink;
+    }
+</style>
+</head>
+<body>
+<div class="flex-container">    
+    <div class="flex-item">Item 1</div>    
+    <div class="flex-item">Item 2</div>    
+    <div class="flex-item">Item 3</div>    
+    <div class="flex-item">Item 4</div>    
+    <div class="flex-item">Item 5</div>    
+    <div class="flex-item2">Item 6</div>    
+    <div class="flex-item2">Item 7</div>    
+    <div class="flex-item2">Item 8</div>    
+    <div class="flex-item2">Item 9</div>    
+    <div class="flex-item2">Item 10</div>  
+</div>    
+</body>
+</html>

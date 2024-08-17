@@ -1,0 +1,106 @@
+<html>
+    <head>
+<style>
+    .myinline
+    {
+        display: inline;
+        width:400px;
+    }
+    .myinlineblock
+    {
+        display: inline-block;
+        width:400px;
+    }
+    .myblock
+    {
+        display: block;
+    width:200px;
+    }
+
+    .grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+}
+article {
+  display: grid;
+  grid-template-rows: 200px 1fr auto; /* e.g. Use a fixed height for the header */
+}
+
+@supports (display: contents) {
+  article { display: contents; }
+}
+
+
+
+.inner {
+  background-color: #ffdb3a;
+  padding: 20px;
+}
+.outer { display: contents; }
+  .outer::before { content: "Before" }
+  .outer::after { content: "After" }
+
+  .flex-container {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-direction: column-reverse; 
+  flex-direction: column; 
+  flex-direction: row; 
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /*flex-flow: row wrap;*/ /*setting both the flex-direction and flex-wrap*/
+}
+
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+div{
+border:1px solid black;
+}
+</style>
+    </head>
+    <body>
+<h1 class="myinline">This is h1</h1>
+<h2 class="myinline">This is h2</h2>
+<br>
+<h1 class="myinlineblock">This is h1</h1>
+<h2 class="myinlineblock">This is h2</h2>
+<br>
+<span class="myblock">First Block</span>
+<span class="myblock">Second Block</span>
+<br>
+<span style="display: none;">This is None</span>
+<br>
+    
+    <div class="outer">
+        I’m some content
+        <div class="inner">I’m some inner content</div>
+      </div>
+
+      <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+        <div>17</div>
+        <div>18</div>
+      </div>
+      </body>
+</html>
