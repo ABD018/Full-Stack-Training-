@@ -1,0 +1,44 @@
+	<html>
+	<head>
+	<title>My First Javascript document</title>
+	<h2 align="center"><font face="comic sans ms" color="red"><u>Kaun Banega Carorepati</u></h2>
+	<script language="Javascript">
+	var score=0
+	function f1()
+	{
+	if(document.f.rb1[0].checked)
+	{
+	score+=1000	
+	alert("Sahi jawab your prize money is "+score +" Rs.")
+	window.open("Kaun2.html?score="+score)
+	}
+	else
+	{
+	score=0	
+	alert("Afsos galat jawab your prize money is "+score +" Rs. You cant continue")
+	window.close()
+	}
+	
+	}
+	</script>
+	</head>
+	<body>
+	<form name="f">
+	<table>
+	<td colspan=4><font color="red">1. Who is the primeminister of India?</td>
+	<tr>
+	<td><font color="red">a. Manmohan</td>
+	<td><input type="radio" name="rb1"></td>
+	<td><font color="red">b. Mulayam</td>
+	<td><input type="radio" name="rb1"></td>
+	<tr>
+	<td><font color="red">c. Murari</td>
+	<td><input type="radio" name="rb1"></td>
+	<td><font color="red">d. Mustafa</td>
+	<td><input type="radio" name="rb1"></td>
+	<tr>
+	<td><input type="button" value="Check It---" onClick="f1()"></td>
+	</table>
+	</form>
+	</body>
+	</html>

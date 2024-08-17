@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<script>
+
+new Promise((resolve, reject) => {
+  setTimeout(() => resolve("value"), 2000);
+})
+   .then(result => alert(result))
+   .finally(() => alert("Promise ready")) ;
+</script>

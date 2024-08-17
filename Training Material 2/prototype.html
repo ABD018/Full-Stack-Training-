@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h2 align="center"><font face="comic sans ms" color="red"><u>Prottotype in Javascript</u></h2>
+        <script>
+function Person () {
+     this.name = 'Jasmeet',
+     this.age = 42
+ }
+
+const person = new Person();
+document.write(Person.prototype+"<br>");
+//Adding property to constructor function using prototype
+const person1 = new Person();
+const person2 = new Person();
+Person.prototype.gender = 'male';
+//inheriting the property from prototype
+document.write(person1.gender+"<br>");
+document.write(person2.gender+"<br>");
+
+//Adding function to constructor function using prototype
+Person.prototype.hi = function() {
+   document.write('hello' + ' ' +  this.name+"<br>");
+ }
+person1.hi(); 
+person2.hi(); 
+
+// changing the property value of prototype
+Person.prototype.address='23 special wing prem nagar dehradun'
+document.write(person.address+"<br>"); 
+Person.prototype={address:'Newyork'}
+const person3 = new Person();
+document.write(person3.address+"<br>")
+document.write(person.address+"<br>")
+document.write(person1.address+"<br>")
+document.write(person2.address+"<br>")
+
+//Prototype Chaning-------------------------
+/*function Person() {
+    this.name = 'Jasmeet'
+}
+
+Person.prototype.name = 'Sumit';
+Person.prototype.age = 23
+
+const person1 = new Person();
+document.write(person1.name+"<br>"); 
+document.write(person1.age+"<br>"); */
+
+
+        </script>
+    </head>
+</html>

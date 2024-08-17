@@ -1,0 +1,24 @@
+<html>
+<head>
+<script>
+function calculate(operation, initialValue, numbers) {
+  let total = initialValue;
+  for (const number of numbers) {
+    total = operation(total, number);
+  }
+  return total;
+}
+function sum(n1, n2) {
+  return n1 + n2;
+}
+function multiply(n1, n2) {
+  return n1 * n2;
+}
+val1=calculate(sum, 0, [1, 2, 4]);      
+val2=calculate(multiply, 1, [1, 2, 4]); 
+alert(val1)
+alert(val2)
+
+</script>
+</head>
+</html>

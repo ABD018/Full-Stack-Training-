@@ -1,0 +1,90 @@
+	<html>
+	<head>
+	<title>My First Javascript document</title>
+	<h2 align="center"><font face="comic sans ms" ><u>Learning Javascript</u></h2>
+	<script language="Javascript">
+	function f1()
+	{
+	document.bgColor=document.f.s1.value	
+	}
+	function f2()
+	{
+	document.fgColor=document.f.s2.value	
+	}
+	
+	
+	</script>
+	</head>
+	
+	<body onLoad="{alert('This is an example of onLoadEvent')}" onUnLoad="{alert('This is an example of onUnload Event')}">
+	<form name="f">
+	Select Background Color : <select name="s1" onChange="f1()">
+	<option value="red">Red</option>
+	<option value="green">Green</option>
+	<option value="lime">Lime</option>
+	<option value="blue">Blue</option>
+	<option value="cyan">Cyan</option>
+	<option value="purple">Purple</option>
+	<option value="orange">Orange</option>
+	<option value="silver">Silver</option>
+	<option value="yellow">Yellow</option>
+	</select>
+
+	Select ForeGround Color : <select name="s2" onChange="f2()">
+	<option value="red">Red</option>
+	<option value="green">Green</option>
+	<option value="lime">Lime</option>
+	<option value="blue">Blue</option>
+	<option value="cyan">Cyan</option>
+	<option value="purple">Purple</option>
+	<option value="orange">Orange</option>
+	<option value="silver">Silver</option>
+	<option value="yellow">Yellow</option>
+	</select>
+
+	
+	
+	<input type="button" value="Double Click this button" onDblClick="{alert('This is an example of Double click event')}">
+	<input type="button" value="Click this button" id="clickable">
+	<button onclick="alert(this.innerHTML)">Click me</button>
+	<input type="button" onclick="alert(event.type)" value="Event type">
+	<input type="button" value="Click me" id="elem">
+	<button id="usinghandler">Click me</button>
+	<br>
+		
+	<br>
+	<input type="text" onFocus="{bgColor='#ff00cc'}" onBlur="{bgColor='#00ccff'}" id="message"><br>
+	
+	<img src="a.jpg" onMouseDown="{alert('This is an example of onMouseDownEvent')}">
+	<img src="a.jpg" onMouseUp="{alert('This is an example of onMouseUpEvent')}">
+	<img src="a.jpg" onError="{alert('This is an example of onErrorEvent')}">
+	<img src="a.jpg" onAbort="{alert('This is an example of onAbortEvent')}">
+	</form>
+	<script>
+		let textBox = document.getElementById('message');
+    textBox.addEventListener('keydown', (event) => {
+            alert(`key=${event.key},code=${event.code}`);
+
+        });
+		
+  clickable.onclick = function() {
+    alert('Thank you');
+  };
+
+  elem.onclick = function(event) {
+    alert(event.type + " at " + event.currentTarget);
+    alert("Coordinates: " + event.clientX + ":" + event.clientY);
+  };
+  
+  let obj = {
+    handleEvent(event) {
+      alert(event.type + " at " + event.currentTarget);
+    }
+  };
+
+  usinghandler.addEventListener('click', obj);
+  
+		</script>
+		
+	</body>
+	</html>

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<script>
+"use strict";
+
+let promise = new Promise((resolve, reject) => {
+  setTimeout(() => reject(new Error("Whoops!")), 1000);
+});
+
+promise.catch(alert); //only interested in error
+</script>

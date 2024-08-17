@@ -1,0 +1,19 @@
+	<addressbook>
+	<address>
+	<name>Jasmeet</name>
+	<age>28</age>
+	<phone>463634634</phone>
+	</address>
+	<address>
+	<name>Rakesh</name>
+	<age>27</age>
+	<phone>5756756756</phone>
+	</address>
+	<address>
+	<name>Hemant</name>
+	<age>28</age>
+	<phone>348538434</phone>
+	</address>
+
+	</addressbook>
+	

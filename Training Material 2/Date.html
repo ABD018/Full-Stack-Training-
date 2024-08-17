@@ -1,0 +1,54 @@
+	<html>
+	<head>
+	<title>My First Javascript document</title>
+	<h2 align="center"><font face="comic sans ms"><u>Learning Javascript</u></h2>
+	<script language="Javascript">
+	//var d=new Date("10-23-1979")
+	// var d = new Date("October 13, 2013 11:13:00"); 
+  	// document.write("Date is : " + d);
+	//  var d = new Date(2014, 11, 24, 10, 33, 30, 0); 
+  	// document.write(d);
+	const d=new Date()
+	document.write("<h2><font face='comic sans ms'>Current date and time is "+d+"<br>")
+	document.write("Year : "+d.getYear()+"<br>")
+	document.write("UTCDate : "+d.getUTCDate()+"<br>");
+	//document.write("Set date : "+d.setDate(5)+"<br>")
+	//var d2=new Date(d.setDate(5));
+	//document.write("SetDate : "+d2+"<br>")
+	document.write("FullYear : "+d.getFullYear()+"<br>")
+	document.write("Month : "+d.getMonth()+"<br>")
+	document.write("Date : "+d.getDate()+"<br>")
+	document.write("Day : "+d.getDay()+"<br>")
+	document.write("Hours : "+d.getHours()+"<br>")
+	document.write("Minutes : "+d.getMinutes()+"<br>")
+	document.write("Seconds : "+d.getSeconds()+"<br>")
+	document.write("Milliseconds : "+d.getMilliseconds()+"<br>")
+	document.write("Time : "+d.getTime()+"<br>")
+	var mydate=new Date(d.getTime());
+	document.write("CurrentTime : "+mydate.toTimeString()   +"<br>")
+	document.write("CurrentDate : "+mydate.toDateString()   +"<br>")
+	document.write("Current time is : "+d.getHours()+" : "+d.getMinutes()+" : "+d.getSeconds()+"<br>")
+	if(d.getSeconds()>=0 && d.getSeconds()<=15)
+	{
+	document.write("<body bgColor='purple' text='aqua'>")
+	}
+	else if(d.getSeconds()>=16 && d.getSeconds()<=30)
+	{
+	document.write("<body bgColor='yellowlime' text='yellow'>")
+	}
+	else if(d.getSeconds()>=31 && d.getSeconds()<=45)
+	{
+	document.write("<body bgColor='cyan' text='maroon'>")
+	}
+	else
+	{
+	document.write("<body bgColor='orange' text='purple'>")
+	}
+
+
+	</script>
+	</head>
+	<body>
+<meta http-equiv="refresh" content=1>
+	</body>
+	</html>

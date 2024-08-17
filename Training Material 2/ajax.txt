@@ -1,0 +1,102 @@
+Ajax stands for Asynchronous Javascript And XML. Although strictly speaking Ajax itself is not a technology, it mixes well-known programming techniques in an uncommon way to enable web developers to build Internet applications with much more appealing user interfaces .
+
+When using popular desktop applications, we expect the results of our work to be made available immediately, without fuss, and without us having to wait for the whole screen to be redrawn by the program. While using a spreadsheet such as Excel, for instance, we expect the changes we make in one cell to propagate immediately through the neighboring cells while we continue to type, scroll the page, or use the mouse.
+
+The HTTP Request and Response
+The HTTP protocol can be likened to a conversation based on a series of questions and answers, which we refer to respectively as HTTP requests and HTTP responses.
+
+The contents of HTTP requests and responses are easy to read and understand, being near to plain English in their syntax.
+
+This section examines the structure of these requests and responses, along with a few examples of the sorts of data they may contain.
+
+The HTTP Request
+After opening a connection to the intended server, the HTTP client transmits a request in the following format:
+
+An opening line
+
+Optionally, a number of header lines
+
+A blank line
+
+Optionally, a message body
+
+
+
+The HTTP Response
+In answer to such a request, the server typically issues an HTTP response, the first line of which is often referred to as the status line. In that line the server echoes the HTTP version and gives a response status code (which is a three-digit integer) and a short message known as a reason phrase. Here's an example HTTP response:
+
+HTTP/1.0 200 OK
+
+
+
+The response status code and reason phrase are essentially intended as machine-and human-readable versions of the same message, though the reason phrase may actually vary a little from server to server. Table 3.1 lists some examples of common status codes and reason phrases. The first digit of the status code usually gives some clue about the nature of the message:
+
+ready State Property
+
+1**Information
+
+2**Client error
+
+3**Redirected
+
+4**Success
+
+5**Server error
+
+Table 3.1. Some Commonly Encountered HTTP Response Status Codes Status Code
+ Explanation
+ 
+200 - OK
+ The request succeeded.
+ 
+204 - No Content
+ The document contains no data.
+ 
+301 - Moved Permanently
+ The resource has permanently moved to a different URI.
+ 
+401 - Not Authorized
+ The request needs user authentication.
+ 
+403 - Forbidden
+ The server has refused to fulfill the request.
+ 
+404 - Not Found
+ The requested resource does not exist on the server.
+ 
+408 - Request Timeout
+ The client failed to send a request in the time allowed by the server.
+ 
+500 - Server Error
+ Due to a malfunctioning script, server configuration error or similar.
+ 
+
+The Constituent Parts of Ajax
+Now let's examine the components of an Ajax application one at a time.
+
+The XMLHTTPRequest Object
+When you click on a hyperlink or submit an HTML form, you send an HTTP request to the server, which responds by serving to you a new or revised page. For your web application to work asynchronously, however, you must have a means to send HTTP requests to the server without an associated request to display a new page.
+
+You can do so by means of the XMLHTTPRequest object. This JavaScript object is capable of making a connection to the server and issuing an HTTP request without the necessity of an associated page load.
+
+What Happens at the Server?
+So far as the server-side script is concerned, the communication from the XMLHTTPRequest object is just another HTTP request. Ajax applications care little about what languages or operating environments exist at the server; provided that the client-side Ajax layer receives a timely and correctly formatted HTTP response from the server, everything will work just fine.
+
+It is possible to build simple Ajax applications with no server-side scripting at all, simply by having the XMLHTTPRequest object call a static server resource such as an XML or text file.
+
+Ajax applications may make calls to various other server-side resources such as web services. Later in the book we'll look at some examples of calling web services using protocols such as SOAP and REST
+
+
+Introducing XMLHTTPRequest
+XMLHTTPRequest is supported by virtually all modern browsers, including Microsoft's Internet Explorer 5+ and a variety of non-Microsoft browsers, including Mozilla, Firefox, Konqueror, Opera, and Safari, and is supported on a wide range of platforms, including Microsoft Windows, UNIX/Linux, and Mac OS X.
+
+
+
+The purpose of the XMLHTTPRequest object is to allow JavaScript to formulate HTTP requests and submit them to the server. Traditionally programmed web applications normally make such requests synchronously, in conjunction with a user-initiated event such as clicking on a link or submitting a form, resulting in a new or updated page being served to the browser.
+
+Using XMLHTTPRequest, however, you can have your page make such calls asynchronously in the background, allowing you to continue using the page without the interruption of a browser refresh and the loading of a new or revised page.
+
+This capability underpins all Ajax applications, making the XMLHTTPRequest object the key to Ajax programming.
+
+
+

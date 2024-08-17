@@ -1,0 +1,85 @@
+<html>
+	<head>
+	<title>My First Javascript document</title>
+	<h2 align="center"><font face="comic sans ms"><u>Learning Javascript</u></h2>
+	<script language="Javascript">
+/*class User {
+constructor(name) {
+  this.name = name;
+}
+sayHi() {
+  alert(this.name);
+}
+}
+
+let user = new User("Jasmeet");
+user.sayHi();
+
+// class is a function
+alert(typeof User); 
+alert(User === User.prototype.constructor);
+alert(User.prototype.sayHi); 
+alert(Object.getOwnPropertyNames(User.prototype)); */
+
+//Class without using class keyword
+/*function User(name) {
+  this.name = name;
+}
+User.prototype.sayHi = function() {
+  alert(this.name);
+};
+
+let user = new User("Jasmeet");
+user.sayHi();*/
+
+//-------------Classes Expressions-----------------
+/*let User = class MyClass {
+  sayHi() {
+    alert(MyClass); // MyClass name is visible only inside the class
+  }
+};
+
+ new User().sayHi();
+ alert(MyClass); */
+
+//----------------Getter and Setters-------------------
+/*class User {
+constructor(name) {
+    // invokes the setter
+   this.name = name;
+}
+
+get name() {
+  return this._name;
+}
+
+set name(value) {
+  if (value.length < 4) {
+    alert("Name is too short.");
+    return;
+  }
+  this._name = value;
+}
+
+}
+
+let user = new User("Jasmeet");
+alert(user.name); 
+user = new User(""); */
+
+//--------------Class Field----------------
+class User {
+  name = "Jasmeet";
+
+  sayHi() {
+    alert(`Hello, ${this.name}!`);
+  }
+}
+
+new User().sayHi();
+	</script>
+	</head>
+	<body>
+
+	</body>
+	</html>

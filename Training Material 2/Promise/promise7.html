@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<script>
+
+new Promise((resolve, reject) => {
+  throw new Error("error");
+})
+	.catch(err => alert(err))
+  .finally(() => alert("Promise ready")) ;
+</script>

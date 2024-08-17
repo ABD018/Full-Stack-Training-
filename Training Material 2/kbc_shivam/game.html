@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game</title>
+    <link rel="stylesheet" href="game.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://sdk.twilio.com/js/client/v1.13/twilio.min.js"></script>
+  </head>
+  <body>
+    <div class="prize-button">
+      <button class="prize-check" onclick="showBar()">
+        Prizes <i class="fa-solid fa-caret-down"></i>
+      </button>
+    </div>
+    <div class="price-bar">
+      <ol id="priceList" class="price-list" reversed>
+        <li>10,000,000</li>
+        <li>5,000,000</li>
+        <li>2,500,000</li>
+        <li>1,200,000</li>
+        <li>650,000</li>
+        <li>320,000</li>
+        <li>160,000</li>
+        <li>80,000</li>
+        <li>40,000</li>
+        <li>20,000</li>
+        <li>10,000</li>
+        <li>5,000</li>
+        <li>3,000</li>
+        <li>2,000</li>
+        <li>1,000</li>
+      </ol>
+    </div>
+
+    <div class="timer">
+      <span id="time-left"></span>
+    </div>
+
+    <div class="top-bar">
+      <!-- phone-->
+      <div class="lifeline-container">
+        <button class="lifeline-phone" onclick="initiateCall()">
+          <i class="fa-solid fa-phone"></i> phone
+        </button>
+      </div>
+
+      <div class="score-container">
+        Prize for this question: <span id="Prizee">1000 Rs</span>
+      </div>
+
+      <!-- 50/50 -->
+      <div class="lifeline-container">
+        <button class="lifeline-5050" onclick="use5050Lifeline()">50/50</button>
+      </div>
+    </div>
+
+    <div class="quiz-container">
+      <div class="question">
+        <h2 id="question-number">QUESTION-1</h2>
+        <p id="question-text">Where is ICC's Headquarters Located?</p>
+      </div>
+      <div class="options">
+        <button class="option" onclick="checkAnswer(0)">A. Dubai</button>
+        <button class="option" onclick="checkAnswer(1)">B. Delhi</button>
+        <button class="option" onclick="checkAnswer(2)">C. Lahore</button>
+        <button class="option" onclick="checkAnswer(3)">D. Dhaka</button>
+      </div>
+    </div>
+
+    <div class="down-bar">
+      <button id="quite" onclick="quite()">
+        <i class="fa-solid fa-house"></i> Quite
+      </button>
+    </div>
+
+    <div id="quitModal" class="modal2">
+      <div class="modal-content2">
+        <h2>Quit Game</h2>
+        <p>Are you sure you want to quit?</p>
+        <p>
+          If you Quit Here Final Prize you Get : <span id="quite-prize"></span>
+        </p>
+        <div class="button-container">
+          <button id="yesButton" onclick="yes()">Yes</button>
+          <button id="noButton" onclick="no()">No</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <img src="asessts/kbc1-Photoroom.png" alt="" />
+        <h2 id="modal-message"></h2>
+        <p id="final-score"></p>
+        <button id="okButton">OK</button>
+      </div>
+    </div>
+
+    <audio id="backgroundMusic">
+      <source src="asessts/sound.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>

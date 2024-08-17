@@ -1,0 +1,21 @@
+	<html>
+	<head>
+	<title>My First Javascript document</title>
+	<h2 align="center"><font face="comic sans ms" ><u>Learning Javascript</u></h2>
+	<script language="Javascript">
+	function f1()
+	{
+	var weekday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+	var d=new Date(document.f.t1.value)	
+	document.f.t2.value=weekday[d.getDay()];
+	}
+	</script>
+	</head>
+	<body>
+	<form name="f">
+	Enter your Date of Birth : <input type="text" name="t1">
+	Your BirthDay is : <input type="text" name="t2">
+	<input type="button" value="GetDay--" onClick="f1()">
+	</form>
+	</body>
+	</html>

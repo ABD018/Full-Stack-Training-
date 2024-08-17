@@ -1,0 +1,78 @@
+	<html>
+	<head>
+	<title>Ajax Demonstration</title>
+	<style>
+	.displaybox {
+	width:150px;
+	background-color:#ffffff;
+	border:2px groove #000000;
+	padding:10px;
+	font:24px normal verdana, helvetica, arial, sans-serif;
+	}
+	.displaybox2 {
+	width:150px;
+	background-color:#ff00cc;
+	border:2px groove #000000;
+	padding:10px;
+	font:24px normal verdana, helvetica, arial, sans-serif;
+	}
+
+	</style>
+	<script language="JavaScript" type="text/javascript">
+	function getXmlHttp() {
+	try {
+	req = new XMLHttpRequest();
+	} catch(err1) {
+	  try {
+	  req = new ActiveXObject("Msxml2.XMLHTTP");
+	  } catch (err2) {
+	    try {
+	    req = new ActiveXObject("Microsoft.XMLHTTP");
+	    } catch (err3) {
+	      req = false;
+	    }
+	  }
+	}
+	return req;
+	}
+	
+	var http = getXmlHttp()
+	
+	function getServerTime() {
+	  var myurl = 'servertime.php';
+	  myRand = parseInt(Math.random()*999999999999999);
+	// add random number to URL to avoid cache problems
+	  var modurl = myurl+"?rand="+myRand;
+	  http.open("GET", modurl, true);
+	  http.onreadystatechange = useHttpResponse;
+	  http.send(null);
+	}
+	
+	function useHttpResponse() {
+	   if (http.readyState == 4) {
+	    if(http.status == 200) {
+	       var timeValue = 	http.responseXML.getElementsByTagName("timenow")[1];
+		   var timeValue2 = 	http.responseXML.getElementsByTagName("timenow")[0];
+	       document.getElementById('showtime').innerHTML = 	timeValue.childNodes[0].nodeValue;
+	       document.getElementById('showtime2').innerHTML =	timeValue2.childNodes[0].nodeValue;
+
+	    }
+	  } else {
+	  document.getElementById('showtime').innerHTML = '<img 	src="loading.gif">';
+	  }
+	}
+	</script>
+		</head>
+	<body style="background-color:#cccccc" onLoad="getServerTime()">
+	<center>
+	<h1>Ajax Demonstration</h1>
+	<h2>Getting the server time without page refresh</h2>
+	<form>
+	<input type="button" value="Get Server Time" 	onClick="getServerTime()">
+	</form>
+	<div id="showtime" class="displaybox"></div>
+	<div id="showtime2" class="displaybox2"></div>
+	</center>
+	</body>
+	</html>
+	

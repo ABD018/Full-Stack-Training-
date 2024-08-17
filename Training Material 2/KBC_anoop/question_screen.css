@@ -1,0 +1,311 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.container{
+    width:100vw;
+    height:100vh;
+    background:url("./assests/images/HJZ5Cp97N6wkNQsL.jpg_large");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display:flex;
+    flex-wrap :wrap;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+.question{
+    position:relative;
+    width:60%;
+    background-color:rgba(0, 0, 0, 0.5);
+    padding:12px 24px;
+    backdrop-filter:blur(2px);
+    border:2px solid rgba(240 , 245 , 255 , 0.7);
+    border-radius:15px;
+    margin-top:150px
+}
+
+.display_question{
+    text-decoration:none;
+    color:rgb(240 , 245 , 255);
+    font-size:1.5rem;
+    text-align:center;    
+}
+.option{
+    width:60%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    margin-top:40px
+}
+.first_option{
+    padding:12px 24px;
+    text-decoration:none;
+    color:rgb(240 , 245 , 255);
+    width:300px;
+    border:2px solid rgba(240 , 245 , 255 , 0.7);
+    border-radius:15px;
+    background-color:rgba(0,0,0,0.5);
+    backdrop-filter:blur(2px);
+    margin-top:20px
+}
+.prize{
+    padding:20px;
+    position:fixed;
+    top:0;
+}
+.prize>h1{
+    color:aliceblue;
+    font-size:2.5rem;
+    text-align:center;
+    
+}
+.display_score{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:60%;
+    height:90%;
+    background-color:rgba(0,0,0,0.5);
+    backdrop-filter:blur(2px);
+    color:aliceblue;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    border-radius:15px;
+    border:1px solid rgba(245 , 245 , 255 , 0.5);
+    z-index:10;
+}
+.display_score_card{
+    display:none;
+}
+.logo{
+    width:25%;
+    margin-top:-20px;
+}
+.logo>img{
+    width:100%;
+}
+.display_score{
+    margin-top:20px;
+}
+.display_score>.text>h1{
+    font-size:3.5rem;
+}
+.display_score>.text>p{
+    font-size:2rem;
+    text-align:center;
+}
+.start_button>a{
+    text-decoration:none;
+    color:aliceblue;
+    padding:12px 24px;
+    border:2px solid rgba(240 , 245 , 255 , 0.7);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 32%, rgba(6,14,61,1) 66%, rgba(15,19,117,1) 100%);
+    border-radius:15px;
+    font-size:1.5rem;
+}
+.start_button{
+    margin-top:50px;
+}
+.timer{
+    height:40px;
+    width:40px;
+    border:2px solid white;
+    border-radius:50%;
+    color:rgb(245 , 245 , 250);
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    position:fixed;
+    top:-60%;
+    left:50%;
+    border-bottom:4px solid rgba(0,0,0,0);
+    background-color:rgba(0,0,0);
+    backdrop-filter:blur(2px);
+    z-index:10;
+}
+.life-line{
+    width:100px;
+    height:300px;
+    background-color:rgba(0,0,0,0.5);
+    backdrop-filter:blur(2px);
+    position:fixed; 
+    right:3%;
+    top:11%;
+    border:2px solid rgba(240 , 245 , 255 , 0.7);
+    border-radius:15px;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+}
+.fifty-fifty , .phone-o-friend , .replace-question{
+    width:70px;
+    height:70px;
+    border:2px solid rgba(240 , 245 , 255 , 0.7);
+    border-radius:50%;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 32%, rgba(6,14,61,1) 66%, rgba(15,19,117,1) 100%);
+    color:aliceblue;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+}
+.fifty-fifty>span
+{
+    font-size:1.2rem;
+    font-weight:bold;
+}
+.life-line-surity{
+    display:none;
+}
+.display-life-line-surity{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:60%;
+    height:90%;
+    background-color:rgba(0,0,0,0.5);
+    backdrop-filter:blur(2px);
+    color:aliceblue;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    border-radius:15px;
+    border:1px solid rgba(245 , 245 , 255 , 0.5);
+    z-index:10;
+}
+.display-life-line-image{
+    width:30%;
+}
+.display-life-line-image>img{
+    width:100%;
+}
+.display-life-line-text{
+    margin-top:30px;
+    font-size:2.5em;
+}
+.display-life-line-surity-button{
+    width:40%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    margin-top:20px;
+}
+.display-life-line-surity-button>button{
+    padding:12px 24px;
+    border-radius:10px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 32%, rgba(6,14,61,1) 66%, rgba(15,19,117,1) 100%);
+    color:white;
+    font-size:1.2em;
+}
+.prize-menu{
+    position:fixed;
+    top:1%;
+    left:1%;
+    background-color:rgba(0,0,0,0.5);
+    border:2px solid rgba(240,245,255,0.7);
+    height:40px;
+    width:60px;
+    border-radius:8px;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    backdrop-filter:blur(2px);
+    cursor:pointer;
+}
+.line{
+    width:70%;
+    height:5px;
+    background-color:aliceblue;
+}
+
+.prize-list{
+    position:fixed;
+    top:10%;
+    left:0;
+    width:270px;
+    height:530px;
+    background-color:rgba(0,0,0,0.5);
+    border:2px solid rgba(240 , 245 , 250 , 0.7);
+    z-index:100;
+    border-radius:15px;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    backdrop-filter:blur(2px);
+}
+.prize-list>ul{
+    color:aliceblue;
+    list-style-type:none;  
+}
+.prize-list>ul>li{
+    font-size:1.1em;
+    border:2px solid rgba(240 , 245 , 255 , 0.7);
+    padding:3px 50px;
+    margin-top:4px;
+    border-radius:5px;
+
+}
+
+#prize-list{
+    display:none;
+}
+
+.cross-line{
+    width:3px;
+    height:70px;
+    background-color:red;
+    position:fixed;
+    transform:rotate(-60deg);
+    border-radius:1px;
+    display:none;
+}
+
+.quit{
+    padding:12px 24px;
+    color:aliceblue;
+    border:2px solid rgba(240 , 245 , 255 , 0.7);
+    background-color:rgba(0,0,0,0.5);
+    backdrop-filter:blur(2px);
+    border-radius:15px;
+    margin-top:70px;
+    cursor:pointer;
+}
+.quitePrize{
+    font-size:1.3em;
+}
+@media(max-width:1000px){
+    .first_option{
+        width:100%;
+    }
+}
+
+@media(max-width:600px){
+    .life-line{
+        display:none;
+    }
+    .prize>h1{
+        font-size:2em;
+    }
+}

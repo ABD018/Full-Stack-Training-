@@ -1,0 +1,363 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: url("asessts/HJZ5Cp97N6wkNQsL.jpg_large") no-repeat center center
+    fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  color: #fff;
+}
+
+.clock-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 900px;
+  width: 90%;
+}
+.timer {
+  margin-bottom: 15px;
+  border: 2px solid rgb(252, 186, 18);
+  background-color: black;
+  font-size: 2rem;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lifeline-container {
+  text-align: center;
+
+  border-radius: 15px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.lifeline-5050 {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #ff7300;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.lifeline-phone {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #ff7300;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.prize-check {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #ff7300;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: none;
+}
+.prize-check:hover {
+  background-color: #0056b3;
+}
+
+.lifeline-phone:hover {
+  background-color: #0056b3;
+}
+.lifeline-5050:hover {
+  background-color: #0056b3;
+}
+
+.score-container {
+  background-color: rgba(0, 0, 51, 0.8);
+  padding: 10px 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  font-size: 1.6em;
+  text-align: center;
+}
+
+.quiz-container {
+  background-color: rgba(0, 0, 51, 0.6);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  width: 90%;
+  max-width: 900px;
+}
+
+.question h2 {
+  font-size: 1.8em;
+}
+
+.question p {
+  color: yellow;
+  font-size: 2em;
+  margin: 10px 0 20px 0;
+  font-weight: 400;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+}
+
+.option {
+  background-color: #f0f0f0;
+  box-shadow: rgba(70, 147, 151, 0.25) 0px 14px 28px,
+    rgba(17, 151, 246, 0.22) 0px 10px 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  transition: transform 0.2s;
+  font-weight: 600;
+  padding: 15px;
+  margin: 10px 0;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.option:hover {
+  box-shadow: rgba(230, 249, 111, 0.25) 0px 14px 28px,
+    rgba(230, 250, 4, 0.22) 0px 10px 10px;
+  transform: scale(1.05);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal2 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content2 {
+  background-color: rgba(0, 0, 51, 0.6);
+  margin: 14% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 58%;
+  border-radius: 10px;
+  text-align: center;
+}
+.modal-content2 p {
+  margin-top: 10px;
+}
+.button-container {
+  margin-top: 10px;
+}
+.button-container button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-content {
+  background-color: rgba(0, 0, 51, 0.6);
+  margin: 14% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 58%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal-content img {
+  height: 114px;
+  width: 105px;
+}
+
+#Prizee {
+  color: yellow;
+}
+
+#modal-message {
+  font-size: 1.5em;
+  color: white;
+}
+
+#final-score {
+  font-size: 1.5em;
+  color: yellow;
+  margin-top: 15px;
+  font-weight: 200;
+}
+.correct-option {
+  background-color: #45a049;
+}
+.incorrect-option {
+  background-color: red;
+}
+.down-bar {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  width: 90%;
+}
+#quite {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #ff7300;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#quite:hover {
+  background-color: #0056b3;
+}
+
+#okButton {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#okButton:hover {
+  background-color: #45a049;
+}
+
+.price-bar {
+  border: 1px solid white;
+  background-color: rgba(0, 0, 51, 0.8);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: rgb(232 226 35 / 25%) 0px 50px 100px -20px,
+    rgb(227 243 40 / 30%) 0px 30px 60px -30px,
+    rgb(226 44 10 / 35%) 0px -2px 6px 0px inset;
+
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 100;
+}
+
+.price-bar ol {
+  padding: 0;
+  margin: 0;
+  padding-left: 10px;
+}
+
+.price-bar li {
+  font-size: 1.2em;
+  color: white;
+  padding: 10px 0;
+  border-bottom: 1px solid #fff;
+}
+
+.price-bar li:first-child {
+  font-weight: bold;
+}
+.price-list .current-question {
+  color: yellow;
+  border-bottom: 1px solid yellow;
+}
+@media (min-width: 768px) {
+  .options {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .option {
+    width: 48%;
+  }
+}
+
+#quite-prize {
+  color: yellow;
+}
+
+@media (max-width: 1285px) {
+  .price-bar {
+    display: none;
+    top: 60px;
+  }
+  .prize-check {
+    display: block;
+  }
+  .price-bar li {
+    font-size: 1em;
+  }
+}
+
+.lifeline-phone.used {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.used {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}

@@ -1,0 +1,33 @@
+<html>
+<head>
+<script>
+/*function mainFunction(callback) {
+document.write("Performing operation...");
+setTimeout(function() {
+	callback("Operation complete");
+}, 1000);
+}
+
+function callbackFunction(result) {
+document.write("Result: " + result);
+}
+
+mainFunction(callbackFunction);*/
+
+var numbers = [1, 2, 3, 4, 5];
+function mainFunction(callback) {
+document.write("Performing operation...");
+numbers.forEach(callback);
+}
+
+function callbackFunction(number) {
+document.write("Result: " + number);
+}
+
+mainFunction(callbackFunction);
+
+
+
+</script>
+</head>
+</html>

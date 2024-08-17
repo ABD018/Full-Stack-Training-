@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to KBC</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="welcome">
+      <img src="asessts/kbc1-Photoroom.png" alt="" />
+      <p class="neonText">Welcome to KBC game</p>
+
+      <p id="description">
+        The game has 15 questions , and players must choose the correct answer
+        out of four options.
+      </p>
+      <div class="button">
+        <button onclick="game()">Start Game</button>
+      </div>
+    </div>
+    <script>
+      function game() {
+        window.open("game.html", "_self");
+      }
+    </script>
+  </body>
+</html>
